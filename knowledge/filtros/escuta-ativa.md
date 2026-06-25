@@ -1,8 +1,8 @@
 ---
 type: filter
 title: Escuta Ativa
-description: Os cinco componentes da escuta de Chapman — presença, intenção de entender, confiança, cuidado e respeito. O primeiro movimento de qualquer interação humana.
-tags: [escuta, presença, empatia, não-julgamento, chapman]
+description: Os cinco componentes da escuta na liderança humanista — presença, intenção de entender, confiança, cuidado e respeito. O primeiro movimento de qualquer interação humana.
+tags: [escuta, presença, empatia, não-julgamento, liderança-humanista]
 links:
   - acoes/durante-o-conflito.md
   - acoes/recebendo-feedback.md
@@ -14,12 +14,12 @@ timestamp: 2026-06-25
 
 ## Princípio
 
-Em Barry-Wehmiller, escutar é a primeira habilidade que se ensina a um líder — antes de
-delegar, decidir ou comunicar. Chapman é direto: a maioria das pessoas escuta para responder,
-não para entender. A escuta ativa inverte isso. Ela não é uma técnica de conversa; é uma forma
-de demonstrar que a outra pessoa importa.
+Na liderança humanista, escutar é a primeira habilidade que se desenvolve em um líder — antes de
+delegar, decidir ou comunicar. A maioria das pessoas escuta para responder, não para entender.
+A escuta ativa inverte isso. Ela não é uma técnica de conversa; é uma forma de demonstrar que a
+outra pessoa importa.
 
-## Os 5 componentes de Chapman
+## Os 5 componentes
 
 1. **Presença** — estar inteiro na conversa. Sem celular, sem formular a resposta enquanto o
    outro fala, sem pressa de encerrar. A presença é percebida antes de qualquer palavra.

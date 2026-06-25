@@ -42,4 +42,4 @@ Situações onde alguém precisa dar ou receber uma avaliação — sobre compor
 
 ## Nota comportamental
 
-Chapman usa o modelo FBI — Feelings, Behavior, Impact — como estrutura de feedback. Não é avaliação de caráter, é descrição de comportamento observável e seu impacto concreto.
+A liderança humanista estrutura o feedback em torno de sentimento, comportamento e impacto. Não é avaliação de caráter, é descrição de comportamento observável e seu impacto concreto.

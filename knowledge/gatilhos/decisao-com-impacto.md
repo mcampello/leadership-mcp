@@ -40,4 +40,4 @@ Situações onde a pessoa precisa tomar ou comunicar uma decisão que afeta outr
 
 ## Nota comportamental
 
-Chapman distingue liderança de gestão: gestão comunica decisão como fato consumado; liderança comunica decisão como responsabilidade compartilhada. O como se comunica impacta tanto quanto o que se decide.
+A liderança humanista distingue liderar de gerir: a gestão comunica a decisão como fato consumado; a liderança comunica a decisão como responsabilidade compartilhada. O como se comunica impacta tanto quanto o que se decide.

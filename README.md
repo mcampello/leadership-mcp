@@ -1,14 +1,14 @@
 # Leadership MCP
 
 > Uma base de conhecimento viva sobre **liderança humanista** — entregue diretamente ao seu
-> assistente de IA. Baseada na metodologia **Truly Human Leadership®** de Bob Chapman
-> (Barry-Wehmiller).
+> assistente de IA. Inspirada em fontes que se cruzam: Barry-Wehmiller/Bob Chapman, Simon Sinek
+> e a prática de Mario Campello.
 
 O Leadership MCP é uma ferramenta open source e gratuita que se conecta ao Claude (ou a
 qualquer cliente compatível com [MCP](https://modelcontextprotocol.io)). Quando você pede ajuda
 para escrever um e-mail difícil, dar um feedback, comunicar uma decisão ou conduzir um conflito,
 o assistente pode — se você quiser — oferecer uma **sugestão sobre a parte humana** da situação,
-fundamentada em uma metodologia de liderança com impacto econômico comprovado.
+fundamentada em princípios de liderança com impacto humano e econômico comprovado.
 
 A sugestão é sempre **uma hipótese, nunca uma prescrição**. Você decide se quer ouvir.
 
@@ -16,22 +16,23 @@ A sugestão é sempre **uma hipótese, nunca uma prescrição**. Você decide se
 
 ## A filosofia: por que isso importa
 
-Bob Chapman assumiu a Barry-Wehmiller como uma fabricante de máquinas à beira da dificuldade e a
-transformou aplicando uma ideia simples e radical: **as pessoas não são recursos a serviço do
-negócio; o negócio existe a serviço das pessoas.** Ele chama isso de *Truly Human Leadership*.
+A premissa é simples e radical: **as pessoas não são recursos a serviço do negócio; o negócio
+existe a serviço das pessoas.** Liderar, nessa visão, é colocar-se a serviço de quem se lidera —
+e a forma como você conduz cada interação humana importa tanto quanto a decisão em si.
 
-> *"Medimos o sucesso pela forma como tocamos a vida das pessoas."* — Bob Chapman
+Não é teoria sem lastro. A abordagem tem evidência concreta:
 
-Os resultados não foram só humanos — foram econômicos:
+- Na Barry-Wehmiller, levada ao extremo por Bob Chapman, a empresa cresceu de **US$ 20M para
+  US$ 3,6B** em cerca de 50 anos — caso documentado pela **Harvard Business School (2016)** e
+  ensinado em mais de 70 escolas.
+- *"Medimos o sucesso pela forma como tocamos a vida das pessoas."* — Bob Chapman,
+  *Everybody Matters* (2015, rev. 2025).
+- Simon Sinek, em *Leaders Eat Last*, mostra por que equipes em que as pessoas se sentem seguras
+  e cuidadas performam melhor — o líder que "come por último" constrói confiança.
 
-- A empresa cresceu de **US$ 20M para US$ 3,6B** em cerca de 50 anos.
-- A abordagem virou **case da Harvard Business School (2016)**, ensinado em mais de 70 escolas.
-- Está documentada no livro **_Everybody Matters_** (2015, revisado em 2025), de Bob Chapman e
-  Raj Sisodia.
-
-O Leadership MCP pega os princípios dessa metodologia e os torna **acessíveis no momento exato**
-em que você está prestes a interagir com outra pessoa — porque é aí que a liderança acontece, não
-nos treinamentos.
+O Leadership MCP destila esses princípios e os torna **acessíveis no momento exato** em que você
+está prestes a interagir com outra pessoa — porque é aí que a liderança acontece, não nos
+treinamentos. As inspirações completas estão [no fim deste README](#inspira%C3%A7%C3%B5es).
 
 ---
 
@@ -45,8 +46,8 @@ gatilho  →  filtros  →  ação  →  resultado
 
 1. **Gatilho** — identifica a natureza relacional da situação (conflito, feedback, decisão com
    impacto, relacionamento interno, interação externa).
-2. **Filtros** — qualificam a resposta com os pilares de Chapman (escuta ativa, reconhecimento
-   no modelo FBI, cultura de serviço).
+2. **Filtros** — qualificam a resposta com os pilares da liderança humanista (escuta ativa,
+   reconhecimento, cultura de serviço).
 3. **Ação** — uma hipótese de comportamento concreta para aquela situação.
 4. **Resultado** — o efeito esperado quando o comportamento é aplicado (engajamento, confiança,
    cultura inclusiva).
@@ -147,7 +148,7 @@ Configurável por variáveis de ambiente (opcional):
 ├── knowledge/             ← base de conhecimento (fonte canônica)
 │   ├── index.md
 │   ├── gatilhos/          ← 5 situações relacionais
-│   ├── filtros/           ← 3 pilares de Chapman
+│   ├── filtros/           ← 3 pilares da liderança humanista
 │   ├── acoes/             ← 7 hipóteses de comportamento
 │   └── resultados/        ← 3 resultados esperados
 └── server/                ← servidor MCP (Node.js)
@@ -190,22 +191,28 @@ A base de conhecimento é o coração do projeto — contribuições são bem-vi
   orientação consolidada.
 - **Código:** melhorias no servidor MCP, na classificação de gatilhos ou nos testes.
 
-Todo o conteúdo é uma **hipótese de comportamento**, baseada na metodologia de Chapman — não uma
+Todo o conteúdo é uma **hipótese de comportamento**, ancorada na liderança humanista — não uma
 regra rígida. Contribua nesse espírito.
 
 ---
 
-## Créditos e referências
+## Inspirações
 
-Criado por **Mario Campello** como uma ferramenta aberta sobre **liderança + IA**.
+Criado por **Mario Campello** como uma ferramenta aberta sobre **liderança + IA**. A visão deste
+projeto se forma no cruzamento de várias fontes — nenhuma delas é "a metodologia"; juntas elas
+informam uma prática própria de liderança humanista:
 
-- **Metodologia:** Truly Human Leadership® — Bob Chapman / Barry-Wehmiller
-- **Livro:** _Everybody Matters_ (2015, revisado 2025) — Bob Chapman + Raj Sisodia
-- **Universidade:** Barry-Wehmiller University — _Listen Like a Leader_
-- **Case:** Harvard Business School Case Study (2016)
+- **Barry-Wehmiller / Bob Chapman** — _Everybody Matters_ (2015, rev. 2025, com Raj Sisodia);
+  Barry-Wehmiller University (_Listen Like a Leader_); caso da Harvard Business School (2016).
+- **Simon Sinek** — _Leaders Eat Last_, _Start With Why_ e palestras sobre confiança, segurança
+  e propósito.
+- **A experiência e a prática de liderança de Mario Campello** — o que funciona no dia a dia
+  real de conduzir pessoas e relações.
 
-Este projeto é independente e não é afiliado nem endossado pela Barry-Wehmiller. As referências
-à metodologia são feitas para fins educacionais e de divulgação.
+As citações e dados concretos ao longo da base creditam suas fontes; os princípios são expressos
+em voz própria. Este projeto é independente e não é afiliado nem endossado pela Barry-Wehmiller,
+por Bob Chapman ou por Simon Sinek — as referências são feitas para fins educacionais e de
+reconhecimento intelectual.
 
 ## Licença
 

@@ -1,9 +1,8 @@
 #!/usr/bin/env node
 // Leadership MCP — servidor MCP (stdio)
 //
-// Distribui uma base de conhecimento sobre liderança humanista (Truly Human Leadership,
-// Bob Chapman / Barry-Wehmiller) para o Claude. Lê os arquivos .md do GitHub raw
-// (com fallback empacotado) — ver knowledge-loader.js.
+// Distribui uma base de conhecimento sobre liderança humanista para o Claude. Lê os arquivos
+// .md do GitHub raw (com fallback empacotado) — ver knowledge-loader.js.
 //
 // Ferramentas expostas:
 //   - buscar_orientacao(situacao): classifica o gatilho relacional e retorna orientação consolidada
@@ -192,7 +191,7 @@ export async function buildGuidance(situacao) {
   const nota = extractSection(triggerMd, "Nota comportamental");
   if (nota) sections.push(`\n${nota.trim()}`);
 
-  // Filtros conectados (pilares de Chapman).
+  // Filtros conectados (pilares da liderança humanista).
   for (const f of filtros) {
     const summary = await summarizeFile(f, "Princípio");
     if (summary) sections.push(`\n### Filtro — ${summary.title}\n${summary.text}`);
@@ -212,8 +211,8 @@ export async function buildGuidance(situacao) {
 
   sections.push(
     "\n---\n" +
-      "Lembrete: isto é uma hipótese de ação baseada na metodologia Truly Human Leadership " +
-      "(Bob Chapman), nunca uma prescrição. Resuma para a pessoa em 3 a 5 linhas e ofereça como sugestão."
+      "Lembrete: isto é uma hipótese de ação baseada em princípios de liderança humanista, " +
+      "nunca uma prescrição. Resuma para a pessoa em 3 a 5 linhas e ofereça como sugestão."
   );
 
   return sections.join("\n");
@@ -261,9 +260,9 @@ server.registerTool(
     title: "Buscar orientação de liderança",
     description:
       "Recebe a descrição de uma situação relacional (em uma frase) e retorna orientação " +
-      "comportamental baseada na metodologia Truly Human Leadership de Bob Chapman " +
-      "(Barry-Wehmiller). Classifica o gatilho (conflito, decisão com impacto, feedback, " +
-      "relacionamento interno, interação externa) e consolida filtros, ação e resultado. " +
+      "comportamental baseada em princípios de liderança humanista. Classifica o gatilho " +
+      "(conflito, decisão com impacto, feedback, relacionamento interno, interação externa) e " +
+      "consolida filtros, ação e resultado. " +
       "Use quando a pessoa pedir ajuda para conduzir a parte humana de uma situação.",
     inputSchema: {
       situacao: z

@@ -1,7 +1,7 @@
 ---
 type: filter
 title: Cultura de Serviço
-description: O princípio de Chapman de servir antes de ser servido — liderança como responsabilidade pelo bem-estar de quem se lidera, aplicado dentro e fora da organização.
+description: O princípio de servir antes de ser servido — liderança como responsabilidade pelo bem-estar de quem se lidera, aplicado dentro e fora da organização.
 tags: [serviço, liderança, cuidado, responsabilidade, stewardship]
 links:
   - acoes/comunicando-decisao.md
@@ -14,18 +14,17 @@ timestamp: 2026-06-25
 
 ## Princípio
 
-A frase-síntese de Chapman: *"Medimos o sucesso pela forma como tocamos a vida das pessoas."*
-Liderar, nessa visão, não é ter pessoas a serviço de uma meta — é colocar-se a serviço das
-pessoas para que elas realizem o melhor de si. A autoridade existe para cuidar, não para mandar.
+Uma frase sintetiza essa visão: *"medimos o sucesso pela forma como tocamos a vida das pessoas."*
+Liderar, aqui, não é ter pessoas a serviço de uma meta — é colocar-se a serviço das pessoas para
+que elas realizem o melhor de si. A autoridade existe para cuidar, não para mandar.
 
-Chapman usa a imagem da **stewardship** (zeladoria): o líder é guardião das pessoas que lhe
-foram confiadas, como pais são responsáveis pelos filhos. A pergunta que orienta a decisão deixa
-de ser "o que eu preciso que essa pessoa faça?" e passa a ser "do que essa pessoa precisa para
-ter sucesso?".
+Vale a imagem da **zeladoria** (*stewardship*): o líder é guardião das pessoas que lhe foram
+confiadas. A pergunta que orienta a decisão deixa de ser "o que eu preciso que essa pessoa
+faça?" e passa a ser "do que essa pessoa precisa para ter sucesso?".
 
 ## Liderança vs. gestão
 
-Chapman distingue os dois com clareza:
+A liderança humanista distingue os dois com clareza:
 
 - **Gestão** comunica a decisão como fato consumado e trata pessoas como recurso a ser alocado.
 - **Liderança** comunica a decisão como responsabilidade compartilhada e trata pessoas como
@@ -42,7 +41,7 @@ O *como* se comunica impacta tanto quanto o *que* se decide.
 
 ## Dentro e fora
 
-O princípio não para na fronteira da empresa. Chapman aplica o mesmo cuidado a fornecedores,
+O princípio não para na fronteira da empresa. O mesmo cuidado se aplica a fornecedores,
 parceiros e clientes: tratar o fornecedor como alguém cujo sucesso também importa muda a
 qualidade da parceria. Relações externas não têm autoridade formal como suporte — o que as
 sustenta é confiança e reciprocidade.

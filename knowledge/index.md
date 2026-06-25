@@ -1,15 +1,16 @@
 ---
 type: index
 title: Leadership MCP — Knowledge Bundle
-description: Base de conhecimento viva sobre liderança humanista baseada na metodologia Truly Human Leadership de Bob Chapman (Barry-Wehmiller). Distribuída como MCP para Claude.
-tags: [liderança, cultura, chapman, barry-wehmiller, mcp]
+description: Base de conhecimento viva sobre liderança humanista. Distribuída como MCP para Claude. Inspirada em Barry-Wehmiller/Bob Chapman, Simon Sinek e na prática de Mario Campello.
+tags: [liderança, cultura, liderança-humanista, mcp]
 timestamp: 2026-06-25
 ---
 
 # Leadership MCP — Knowledge Bundle
 
 Base de conhecimento sobre liderança humanista com impacto econômico comprovado.
-Baseada na metodologia Truly Human Leadership® de Bob Chapman (Barry-Wehmiller).
+Inspirada em fontes que se cruzam — Barry-Wehmiller/Bob Chapman, Simon Sinek e a prática de
+Mario Campello (ver inspirações no README).
 
 ## Como a base se organiza
 
@@ -18,7 +19,7 @@ A base é navegada em quatro camadas encadeadas:
 **gatilho → filtros → ação → resultado**
 
 1. Um **gatilho** identifica a natureza relacional da situação.
-2. Os **filtros** qualificam a resposta com os pilares de Chapman.
+2. Os **filtros** qualificam a resposta com os pilares da liderança humanista.
 3. A **ação** é uma hipótese de comportamento concreta.
 4. O **resultado** é o efeito esperado quando o comportamento é aplicado.
 
@@ -36,9 +37,9 @@ Situações relacionais que ativam sugestões comportamentais.
 - [interacao-externa.md](gatilhos/interacao-externa.md) — fornecedor, parceiro, cliente, prestador
 
 ### /filtros
-Pilares comportamentais de Chapman que qualificam a resposta.
+Pilares comportamentais da liderança humanista que qualificam a resposta.
 - [escuta-ativa.md](filtros/escuta-ativa.md) — presença, intenção de entender, confiança, cuidado, respeito
-- [reconhecimento.md](filtros/reconhecimento.md) — modelo FBI (Feelings, Behavior, Impact)
+- [reconhecimento.md](filtros/reconhecimento.md) — comportamento, impacto e sentimento
 - [cultura-de-servico.md](filtros/cultura-de-servico.md) — servir antes de ser servido, dentro e fora
 
 ### /acoes
@@ -57,8 +58,9 @@ Resultados esperados quando os comportamentos são aplicados.
 - [confianca.md](resultados/confianca.md)
 - [cultura-inclusiva.md](resultados/cultura-inclusiva.md)
 
-## Referências
-- Bob Chapman — Everybody Matters (2015, revisado 2025)
-- Barry-Wehmiller University — Listen Like a Leader
-- Harvard Business School Case Study (2016) — ensinado em 70+ escolas
-- Simon Sinek — parceria e visão complementar
+## Inspirações
+- Bob Chapman / Barry-Wehmiller — *Everybody Matters* (2015, rev. 2025); caso da Harvard Business School (2016)
+- Simon Sinek — *Leaders Eat Last* e outras obras
+- A prática e a experiência de liderança de Mario Campello
+
+A voz desta base é própria; citações e dados concretos creditam suas fontes. Ver detalhes no README.

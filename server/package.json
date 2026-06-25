@@ -1,7 +1,7 @@
 {
   "name": "leadership-mcp",
-  "version": "0.1.1",
-  "description": "MCP server que distribui uma base de conhecimento viva sobre liderança humanista (Truly Human Leadership, Bob Chapman / Barry-Wehmiller) para o Claude.",
+  "version": "0.1.2",
+  "description": "MCP server que distribui uma base de conhecimento viva sobre liderança humanista para o Claude. Inspirado em Barry-Wehmiller/Bob Chapman, Simon Sinek e na prática de Mario Campello.",
   "type": "module",
   "bin": {
     "leadership-mcp": "index.js"
@@ -22,9 +22,8 @@
     "model-context-protocol",
     "leadership",
     "liderança",
-    "chapman",
-    "barry-wehmiller",
-    "truly-human-leadership",
+    "liderança-humanista",
+    "humanist-leadership",
     "claude"
   ],
   "author": "Mario Campello",

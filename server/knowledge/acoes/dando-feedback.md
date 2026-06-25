@@ -1,8 +1,8 @@
 ---
 type: action
 title: Dando Feedback
-description: Hipóteses de comportamento para dar feedback de reconhecimento ou correção usando o modelo FBI de Chapman.
-tags: [feedback, reconhecimento, correção, fbi]
+description: Hipóteses de comportamento para dar feedback de reconhecimento ou correção, estruturado em comportamento, impacto e sentimento.
+tags: [feedback, reconhecimento, correção, comportamento, impacto]
 links:
   - filtros/reconhecimento.md
   - filtros/escuta-ativa.md
@@ -14,7 +14,7 @@ timestamp: 2026-06-25
 
 > Estas são hipóteses de comportamento, não prescrições. Adapte ao contexto e à pessoa.
 
-## Estruture pelo modelo FBI
+## Estruture o retorno
 
 Use a sequência **Comportamento → Impacto → Sentimento** (ver
 [reconhecimento.md](../filtros/reconhecimento.md)):
