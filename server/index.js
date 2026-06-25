@@ -12,6 +12,8 @@
 import { McpServer } from "@modelcontextprotocol/sdk/server/mcp.js";
 import { StdioServerTransport } from "@modelcontextprotocol/sdk/server/stdio.js";
 import { z } from "zod";
+import { realpathSync } from "node:fs";
+import { fileURLToPath } from "node:url";
 import { loadFile, listDir, parseFrontmatter } from "./knowledge-loader.js";
 
 // ---------------------------------------------------------------------------
@@ -315,7 +317,22 @@ async function main() {
 
 // Só sobe o transporte stdio quando executado como entrypoint (não ao ser importado,
 // p.ex. pelo smoke-test, que reutiliza buildGuidance/classify).
-if (import.meta.url === `file://${process.argv[1]}`) {
+//
+// Importante: ao rodar via `npx`/Claude Desktop, o processo é iniciado pelo symlink em
+// node_modules/.bin/, então process.argv[1] é o symlink enquanto import.meta.url aponta
+// para o arquivo real. Comparar as strings cruas falha e o servidor sai sem subir. Por isso
+// resolvemos os dois lados via realpath antes de comparar.
+function isMainEntrypoint() {
+  try {
+    const thisFile = fileURLToPath(import.meta.url);
+    const invoked = realpathSync(process.argv[1]);
+    return realpathSync(thisFile) === invoked;
+  } catch {
+    return false;
+  }
+}
+
+if (isMainEntrypoint()) {
   main().catch((err) => {
     console.error("Falha ao iniciar o Leadership MCP:", err);
     process.exit(1);
