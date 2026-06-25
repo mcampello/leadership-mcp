@@ -5,6 +5,7 @@ description: Hipóteses de comportamento para conduzir uma situação de tensão
 tags: [conflito, tensão, escuta, desescalada]
 links:
   - filtros/escuta-ativa.md
+  - filtros/presenca-intencional.md
   - resultados/confianca.md
 timestamp: 2026-06-25
 ---
@@ -12,6 +13,14 @@ timestamp: 2026-06-25
 # Ação: Durante o Conflito
 
 > Estas são hipóteses de comportamento, não prescrições. Adapte ao contexto e à pessoa.
+
+## Antes de tudo: regule a si mesmo
+
+Antes de conduzir o outro, regule o seu próprio estado — o humor de quem lidera contagia a
+conversa (ver [presenca-intencional.md](../filtros/presenca-intencional.md)). Pergunte-se "estou
+sendo a pessoa que quero ser agora?" antes de entrar. E lembre que, em tensão, a tarefa costuma
+ser **entender, não consertar**: muitas vezes a pessoa não quer solução, quer não se sentir
+sozinha. Vale perguntar de saída "você quer que eu escute ou que eu ajude a resolver?".
 
 ## O primeiro movimento é escutar
 
@@ -46,4 +55,5 @@ sentir ouvida antes de conseguir ouvir você.
 ## Conexões
 
 - Filtro principal: [escuta-ativa.md](../filtros/escuta-ativa.md)
+- Filtro de presença: [presenca-intencional.md](../filtros/presenca-intencional.md)
 - Resultado esperado: [confianca.md](../resultados/confianca.md)

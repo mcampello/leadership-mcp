@@ -34,6 +34,8 @@ const TRIGGERS = [
       "conflito", "tensão", "desentendimento", "discussão", "discordo", "discordância",
       "briga", "atrito", "agressiv", "crítica", "criticou", "injust", "ruptura",
       "clima ruim", "erro grave", "errou", "reclamação", "bronca", "irritad",
+      "em círculos", "círculos", "discussão sem fim", "não chegamos a um acordo",
+      "não saímos do lugar",
     ],
   },
   {
@@ -44,6 +46,7 @@ const TRIGGERS = [
       "decisão", "decidir", "comunicar decisão", "cancelamento", "cancelar", "demitir",
       "demissão", "reorganiz", "reestrutur", "priorizar", "priorização", "escalar",
       "mudança", "mudar", "impopular", "anunciar", "comunicado", "impacto",
+      "delegar", "delegação", "projeto novo", "novo projeto", "kickoff", "começar um projeto",
     ],
   },
   {
@@ -53,6 +56,7 @@ const TRIGGERS = [
     keywords: [
       "feedback", "avaliação", "avaliar", "reconhec", "elogiar", "elogio", "agradec",
       "retorno", "corrigir comportamento", "parabéns", "reconhecimento", "mérito",
+      "conversa difícil", "venho adiando", "vim adiando", "estou adiando", "preciso falar com",
     ],
   },
   {

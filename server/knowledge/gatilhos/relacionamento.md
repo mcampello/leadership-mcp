@@ -6,6 +6,7 @@ tags: [relacionamento, interno, interação, hierarquia]
 links:
   - filtros/escuta-ativa.md
   - filtros/cultura-de-servico.md
+  - filtros/presenca-intencional.md
   - acoes/antes-da-reuniao.md
 timestamp: 2026-06-25
 ---
@@ -38,4 +39,5 @@ Antes de sugerir ação, o agente deve qualificar:
 
 - Filtro principal: [escuta-ativa.md](../filtros/escuta-ativa.md)
 - Filtro secundário: [cultura-de-servico.md](../filtros/cultura-de-servico.md)
+- Filtro de presença: [presenca-intencional.md](../filtros/presenca-intencional.md)
 - Ação sugerida: [antes-da-reuniao.md](../acoes/antes-da-reuniao.md)

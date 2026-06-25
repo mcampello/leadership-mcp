@@ -12,6 +12,9 @@ const CASES = [
   ["mensagem para pedir ajuda a um colega sem sobrecarregar", "relacionamento"],
   ["como apresento essa decisão impopular para a liderança", "decisao-com-impacto"],
   ["preciso dar um feedback difícil para um liderado", "feedback"],
+  ["tem uma conversa difícil que venho adiando com um liderado", "feedback"],
+  ["a discussão com o time fica andando em círculos e não chegamos a um acordo", "conflito"],
+  ["vou delegar um projeto novo e quero fazer o kickoff com a pessoa", "decisao-com-impacto"],
 ];
 
 let pass = 0;
