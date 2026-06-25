@@ -72,19 +72,27 @@ assistente a detectar situações relacionais e a oferecer — sem impor — uma
 
 ### 2. Registre o servidor MCP
 
+> ⚠️ **Atenção:** este é um servidor MCP **local** (roda na sua máquina via `npx`). Ele **não**
+> se instala pela janela _"Adicionar conector personalizado"_ do Claude — aquela janela é só para
+> servidores **remotos** com uma URL `https://`. A instalação correta é editar o arquivo de
+> configuração, como descrito abaixo. (Por isso ele funciona no Claude **Desktop**, não no web/celular.)
+
 Edite o arquivo de configuração do Claude Desktop:
 
 - **macOS:** `~/Library/Application Support/Claude/claude_desktop_config.json`
 - **Windows:** `%APPDATA%\Claude\claude_desktop_config.json`
 
-Adicione (substitua `NOME_DO_PACOTE` pelo nome publicado no npm — veja a nota abaixo):
+> 💡 Atalho no Claude Desktop: **Settings → Developer → Edit Config** abre esse arquivo direto.
+
+Adicione o bloco abaixo (se o arquivo já tiver outros `mcpServers`, basta acrescentar a entrada
+`"leadership"` dentro do bloco existente):
 
 ```json
 {
   "mcpServers": {
     "leadership": {
       "command": "npx",
-      "args": ["-y", "NOME_DO_PACOTE"]
+      "args": ["-y", "leadership-mcp"]
     }
   }
 }
@@ -93,8 +101,8 @@ Adicione (substitua `NOME_DO_PACOTE` pelo nome publicado no npm — veja a nota 
 Depois **reinicie o Claude Desktop**. Pronto — pergunte algo como *"como respondo um e-mail
 agressivo de um colega?"* e veja a sugestão aparecer.
 
-> **Nota sobre o nome do pacote:** o pacote ainda não foi publicado no npm. Enquanto isso, você
-> pode rodar localmente apontando para o código deste repositório:
+> **Rodando a partir do código (para desenvolvimento):** se você clonou este repositório e quer
+> usar a sua cópia local em vez da versão publicada no npm, aponte para o `index.js`:
 >
 > ```json
 > {
