@@ -293,13 +293,36 @@ npm publish --access public
 
 ## 🤝 Como contribuir
 
-A base de conhecimento é o coração do projeto — contribuições são bem-vindas:
+Essa base cresce com gente. Se você tem uma **referência**, um **autor** que admira, uma **ideia
+de conteúdo**, ou viu algo que dá pra melhorar — **entra junto**. Não precisa saber programar:
+existem dois caminhos, e o primeiro é só preencher um formulário.
 
-- **Conteúdo:** abra um PR adicionando ou refinando arquivos em `knowledge/`. Mantenha o formato
-  (markdown com frontmatter YAML: `type`, `title`, `description`, `tags`, `links`, `timestamp`) e
-  os campos `links:` apontando para as outras camadas — é assim que o servidor monta a orientação
-  consolidada.
-- **Código:** melhorias no servidor MCP, na classificação de gatilhos ou nos testes.
+### Caminho 1 — Abrir uma issue (recomendado, sem código)
+
+A forma mais fácil de colaborar. Você descreve o que tem em mente e eu recebo, respondo e levo
+para a base. Em três passos:
+
+1. **Tenha uma conta GitHub** (é gratuita — leva um minuto em [github.com/signup](https://github.com/signup)).
+2. Vá em **[Issues → New issue](https://github.com/mcampello/leadership-mcp/issues/new/choose)** e
+   escolha o que combina com você:
+   - **💡 Sugerir autor ou referência** — um livro, pensador ou ideia que deveria inspirar a base.
+   - **✍️ Sugerir conteúdo** — uma situação de liderança que ainda não está coberta.
+   - **🐞 Reportar um problema** — algo errado, confuso ou desatualizado.
+3. **Preencha e envie.** Pronto — a conversa começa ali mesmo.
+
+> Sem ideia formada, só quer trocar uma figurinha? Abra uma issue mesmo assim — toda contribuição
+> ajuda a base a melhorar aos poucos.
+
+### Caminho 2 — Editar você mesmo (para quem topa mexer no conteúdo)
+
+Dá pra editar qualquer arquivo da base **direto no navegador**, sem instalar nada: abra o arquivo
+em [`knowledge/`](knowledge/), clique no lápis **✏️ (_Edit this file_)**, faça sua mudança e clique
+em **Propose changes** — o GitHub cria uma proposta (PR) automaticamente, e eu reviso.
+
+O passo a passo completo, o formato dos arquivos e a convenção de voz estão no
+**[guia de contribuição (`CONTRIBUTING.md`)](CONTRIBUTING.md)**.
+
+---
 
 Todo o conteúdo é uma **hipótese de comportamento**, ancorada na liderança humanista — não uma
 regra rígida. Contribua nesse espírito.
