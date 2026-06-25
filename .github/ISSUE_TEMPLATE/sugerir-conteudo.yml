@@ -1,0 +1,34 @@
+name: ✍️ Sugerir conteúdo
+description: Uma situação de liderança que ainda não está coberta pela base.
+title: "[Conteúdo] "
+labels: ["conteúdo"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Obrigado por contribuir! 🙏 A base ajuda nos momentos relacionais do trabalho — um
+        e-mail tenso, um feedback, uma decisão difícil. Conte qual situação está faltando.
+  - type: textarea
+    id: situacao
+    attributes:
+      label: Que situação não está coberta?
+      description: Descreva o momento de liderança que você gostaria de ver na base.
+      placeholder: "Ex.: como dar um feedback difícil para alguém mais sênior que eu..."
+    validations:
+      required: true
+  - type: textarea
+    id: sugestao
+    attributes:
+      label: O que você sugere?
+      description: Sua hipótese de comportamento — como você acha que vale a pena conduzir.
+      placeholder: "Ex.: começar reconhecendo a experiência da pessoa, depois trazer o fato..."
+    validations:
+      required: true
+  - type: input
+    id: fonte
+    attributes:
+      label: Fonte ou inspiração
+      description: De onde vem essa ideia? Um autor, uma experiência sua, um caso. (opcional)
+      placeholder: "Ex.: experiência própria; Leaders Eat Last..."
+    validations:
+      required: false

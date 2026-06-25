@@ -1,0 +1,47 @@
+name: 💡 Sugerir autor ou referência
+description: Indique um livro, pensador ou ideia que deveria inspirar a base.
+title: "[Referência] "
+labels: ["referência"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Obrigado por contribuir! 🙏 Indique uma referência que possa enriquecer a base de
+        liderança humanista. Não precisa preencher tudo — só o que você souber já ajuda.
+  - type: input
+    id: autor-obra
+    attributes:
+      label: Autor, obra ou ideia
+      description: Nome da pessoa, do livro, da palestra ou do conceito.
+      placeholder: "Ex.: Brené Brown — Dare to Lead"
+    validations:
+      required: true
+  - type: textarea
+    id: por-que
+    attributes:
+      label: Por que você recomenda?
+      description: O que essa referência traz que conversa com liderança humanista?
+      placeholder: "Ex.: trata vulnerabilidade como base da confiança no time..."
+    validations:
+      required: true
+  - type: input
+    id: link
+    attributes:
+      label: Link ou onde encontrar
+      description: Um link, ISBN, vídeo — qualquer pista para a gente chegar lá. (opcional)
+      placeholder: "https://..."
+    validations:
+      required: false
+  - type: dropdown
+    id: camada
+    attributes:
+      label: Com qual camada da base isso mais se relaciona?
+      description: "A base é organizada em: gatilho → filtros → ação → resultado. (opcional)"
+      options:
+        - Não sei / não tenho certeza
+        - Gatilho (a situação que dispara)
+        - Filtro (um pilar de comportamento)
+        - Ação (uma hipótese de comportamento)
+        - Resultado (o efeito esperado)
+    validations:
+      required: false

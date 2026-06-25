@@ -1,0 +1,33 @@
+name: 🐞 Reportar um problema
+description: Algo errado, confuso ou desatualizado na base ou no servidor.
+title: "[Correção] "
+labels: ["correção"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Obrigado por ajudar a melhorar o projeto! 🙏 Quanto mais específico, mais rápido a gente
+        corrige.
+  - type: textarea
+    id: problema
+    attributes:
+      label: O que está errado ou confuso?
+      description: Descreva o que você encontrou.
+      placeholder: "Ex.: a orientação para 'comunicar mudança' contradiz a de 'feedback'..."
+    validations:
+      required: true
+  - type: input
+    id: onde
+    attributes:
+      label: Onde?
+      description: Arquivo, seção do README, ou a pergunta que você fez ao assistente. (opcional)
+      placeholder: "Ex.: knowledge/acoes/comunicando-mudanca.md"
+    validations:
+      required: false
+  - type: textarea
+    id: sugestao
+    attributes:
+      label: Como você acha que deveria ser?
+      description: Sua sugestão de correção. (opcional)
+    validations:
+      required: false
