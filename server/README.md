@@ -6,7 +6,7 @@
 
 Quando você pede ajuda para escrever um e-mail difícil, dar um feedback, comunicar uma decisão
 ou conduzir um conflito, o assistente pode — se você quiser — oferecer uma sugestão sobre a
-**parte humana** da situação, fundamentada em uma metodologia de liderança com impacto
+**parte humana** da situação, fundamentada em princípios de liderança com impacto humano e
 econômico comprovado. A sugestão é sempre uma hipótese, nunca uma prescrição.
 
 ## Instalação (Claude Desktop)
