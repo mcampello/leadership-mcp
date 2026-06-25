@@ -1,0 +1,38 @@
+// smoke-test.js — valida classificação e montagem da orientação sem subir o transporte MCP.
+// Usa a base empacotada/local como fonte (não exige rede). Uso: node smoke-test.js
+
+import { classify, buildGuidance } from "./index.js";
+
+// (situação do usuário, gatilho esperado) — frases dos exemplos do prompt v0.3.
+const CASES = [
+  ["escreve um email para o fornecedor que está atrasando", "interacao-externa"],
+  ["como respondo o email agressivo do colega", "conflito"],
+  ["roteiro para anunciar cancelamento do projeto para o time", "decisao-com-impacto"],
+  ["texto de reconhecimento para o time", "feedback"],
+  ["mensagem para pedir ajuda a um colega sem sobrecarregar", "relacionamento"],
+  ["como apresento essa decisão impopular para a liderança", "decisao-com-impacto"],
+  ["preciso dar um feedback difícil para um liderado", "feedback"],
+];
+
+let pass = 0;
+let fail = 0;
+
+console.log("== Classificação ==\n");
+for (const [situacao, esperado] of CASES) {
+  const scored = await classify(situacao);
+  const top = scored[0];
+  const ok = top && top.trigger.id === esperado && top.score > 0;
+  console.log(
+    `${ok ? "✅" : "❌"} "${situacao}"\n   → ${top?.trigger.id} (score ${top?.score}); esperado: ${esperado}`
+  );
+  if (ok) pass++;
+  else fail++;
+}
+
+console.log(`\nResultado: ${pass}/${CASES.length} ok, ${fail} falha(s).\n`);
+
+console.log("== Orientação consolidada (1 exemplo) ==\n");
+const sample = await buildGuidance("como respondo o email agressivo do colega");
+console.log(sample);
+
+process.exit(fail === 0 ? 0 : 1);

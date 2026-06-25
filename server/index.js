@@ -1,0 +1,323 @@
+#!/usr/bin/env node
+// Leadership MCP — servidor MCP (stdio)
+//
+// Distribui uma base de conhecimento sobre liderança humanista (Truly Human Leadership,
+// Bob Chapman / Barry-Wehmiller) para o Claude. Lê os arquivos .md do GitHub raw
+// (com fallback empacotado) — ver knowledge-loader.js.
+//
+// Ferramentas expostas:
+//   - buscar_orientacao(situacao): classifica o gatilho relacional e retorna orientação consolidada
+//   - listar_gatilhos(): retorna a taxonomia de gatilhos para navegação/transparência
+
+import { McpServer } from "@modelcontextprotocol/sdk/server/mcp.js";
+import { StdioServerTransport } from "@modelcontextprotocol/sdk/server/stdio.js";
+import { z } from "zod";
+import { loadFile, listDir, parseFrontmatter } from "./knowledge-loader.js";
+
+// ---------------------------------------------------------------------------
+// Classificação de gatilho
+// ---------------------------------------------------------------------------
+
+// Os 5 gatilhos da taxonomia. A pontuação combina:
+//   - keywords fortes (peso 2): descrevem a NATUREZA da situação (agressivo, decisão, feedback…)
+//   - weakKeywords (peso 1): descrevem só QUEM (colega, gestor, time…) — co-ocorrem em quase
+//     toda situação relacional, então discriminam pouco e não devem dominar a natureza
+//   - "sinais de ativação" extraídos do próprio .md do gatilho (peso 1)
+// A ideia é refletir a lógica do prompt v0.3 sem depender de IA no servidor.
+const TRIGGERS = [
+  {
+    id: "conflito",
+    file: "gatilhos/conflito.md",
+    label: "Conflito",
+    keywords: [
+      "conflito", "tensão", "desentendimento", "discussão", "discordo", "discordância",
+      "briga", "atrito", "agressiv", "crítica", "criticou", "injust", "ruptura",
+      "clima ruim", "erro grave", "errou", "reclamação", "bronca", "irritad",
+    ],
+  },
+  {
+    id: "decisao-com-impacto",
+    file: "gatilhos/decisao-com-impacto.md",
+    label: "Decisão com Impacto",
+    keywords: [
+      "decisão", "decidir", "comunicar decisão", "cancelamento", "cancelar", "demitir",
+      "demissão", "reorganiz", "reestrutur", "priorizar", "priorização", "escalar",
+      "mudança", "mudar", "impopular", "anunciar", "comunicado", "impacto",
+    ],
+  },
+  {
+    id: "feedback",
+    file: "gatilhos/feedback.md",
+    label: "Feedback",
+    keywords: [
+      "feedback", "avaliação", "avaliar", "reconhec", "elogiar", "elogio", "agradec",
+      "retorno", "corrigir comportamento", "parabéns", "reconhecimento", "mérito",
+    ],
+  },
+  {
+    id: "relacionamento",
+    file: "gatilhos/relacionamento.md",
+    label: "Relacionamento Interno",
+    keywords: [
+      "pedir ajuda", "pedir apoio", "abordar", "me relaciono", "onboard",
+      "apresentar", "conversar com", "alinhar com",
+    ],
+    // Só indicam QUEM está envolvido — comuns a quase toda situação relacional.
+    weakKeywords: [
+      "reunião", "gestor", "chefe", "colega", "time", "equipe", "subordinado",
+      "liderado", "diretoria",
+    ],
+  },
+  {
+    id: "interacao-externa",
+    file: "gatilhos/interacao-externa.md",
+    label: "Interação Externa",
+    keywords: [
+      "fornecedor", "parceiro", "parceria", "cliente", "prestador", "lead", "negociar",
+      "negociação", "contrato", "externo", "vendor", "atrasando", "entrega do fornecedor",
+    ],
+  },
+];
+
+// Palavras vazias (já normalizadas, sem acento) — ignoradas no matching de sinais para
+// não inflar a pontuação com termos comuns a quase toda frase ("como", "para", "preciso"…).
+const STOPWORDS = new Set([
+  "como", "para", "com", "sem", "que", "uma", "uns", "umas", "dos", "das", "nos", "nas",
+  "preciso", "quero", "vou", "tenho", "esse", "essa", "isso", "esta", "este", "estou",
+  "sobre", "pelo", "pela", "mais", "menos", "muito", "alguem", "alguma", "algum", "fazer",
+  "tive", "tem", "ter", "ser", "estar", "minha", "meu", "seu", "sua", "dele", "dela",
+]);
+
+function normalize(s) {
+  return (s || "")
+    .toLowerCase()
+    .normalize("NFD")
+    .replace(/[\u0300-\u036f]/g, ""); // remove acentos para casar variações
+}
+
+// Sinais de ativação extraídos do .md (linhas em "## Sinais de ativação"), cacheados.
+const signalCache = new Map();
+async function loadSignals(trigger) {
+  if (signalCache.has(trigger.id)) return signalCache.get(trigger.id);
+  const md = await loadFile(trigger.file);
+  let signals = [];
+  if (md) {
+    const section = /##\s*Sinais de ativação\s*\n([\s\S]*?)(\n##\s|\n*$)/.exec(md);
+    if (section) {
+      signals = section[1]
+        .split("\n")
+        .map((l) => /^\s*-\s*"?(.+?)"?\.*\s*$/.exec(l))
+        .filter(Boolean)
+        .map((m) => normalize(m[1]).replace(/\.\.\.$/, "").trim())
+        .filter((s) => s.length > 3);
+    }
+  }
+  signalCache.set(trigger.id, signals);
+  return signals;
+}
+
+export async function classify(situacao) {
+  const text = normalize(situacao);
+  const scored = [];
+
+  for (const trigger of TRIGGERS) {
+    let score = 0;
+    const hits = [];
+
+    for (const kw of trigger.keywords) {
+      if (text.includes(normalize(kw))) {
+        score += 2;
+        hits.push(kw);
+      }
+    }
+
+    for (const kw of trigger.weakKeywords || []) {
+      if (text.includes(normalize(kw))) {
+        score += 1;
+        hits.push(kw);
+      }
+    }
+
+    const signals = await loadSignals(trigger);
+    for (const sig of signals) {
+      // casa por sobreposição de palavras significativas do sinal (ignora stopwords)
+      const sigWords = sig.split(/\s+/).filter((w) => w.length > 3 && !STOPWORDS.has(w));
+      const overlap = sigWords.filter((w) => text.includes(w)).length;
+      if (sigWords.length > 0 && overlap >= Math.ceil(sigWords.length / 2)) {
+        score += 1;
+        hits.push(sig);
+      }
+    }
+
+    scored.push({ trigger, score, hits });
+  }
+
+  scored.sort((a, b) => b.score - a.score);
+  return scored;
+}
+
+// ---------------------------------------------------------------------------
+// Montagem da orientação
+// ---------------------------------------------------------------------------
+
+export async function buildGuidance(situacao) {
+  const scored = await classify(situacao);
+  const top = scored[0];
+
+  if (!top || top.score === 0) {
+    return [
+      "Não identifiquei com confiança um gatilho relacional específico nesta situação.",
+      "",
+      "Se ela envolve produzir ou estruturar algo para uma pessoa ou grupo, descreva quem é o",
+      "destinatário e qual a tensão envolvida, que eu busco a orientação adequada. Caso seja",
+      "uma tarefa puramente técnica ou operacional, ela provavelmente não exige orientação cultural.",
+    ].join("\n");
+  }
+
+  const triggerMd = await loadFile(top.trigger.file);
+  const { meta } = parseFrontmatter(triggerMd || "");
+  const links = Array.isArray(meta.links) ? meta.links : [];
+
+  // Separa os links por camada.
+  const filtros = links.filter((l) => l.startsWith("filtros/"));
+  const acoes = links.filter((l) => l.startsWith("acoes/"));
+  const resultados = links.filter((l) => l.startsWith("resultados/"));
+
+  const sections = [];
+  sections.push(`## Gatilho identificado: ${top.trigger.label}`);
+
+  // Nota comportamental do próprio gatilho, se houver.
+  const nota = extractSection(triggerMd, "Nota comportamental");
+  if (nota) sections.push(`\n${nota.trim()}`);
+
+  // Filtros conectados (pilares de Chapman).
+  for (const f of filtros) {
+    const summary = await summarizeFile(f, "Princípio");
+    if (summary) sections.push(`\n### Filtro — ${summary.title}\n${summary.text}`);
+  }
+
+  // Ações sugeridas (hipóteses de comportamento).
+  for (const a of acoes) {
+    const summary = await summarizeFile(a, null);
+    if (summary) sections.push(`\n### Ação sugerida — ${summary.title}\n${summary.text}`);
+  }
+
+  // Resultado esperado (um, para fechar).
+  if (resultados.length > 0) {
+    const summary = await summarizeFile(resultados[0], "O que se espera");
+    if (summary) sections.push(`\n### Resultado esperado — ${summary.title}\n${summary.text}`);
+  }
+
+  sections.push(
+    "\n---\n" +
+      "Lembrete: isto é uma hipótese de ação baseada na metodologia Truly Human Leadership " +
+      "(Bob Chapman), nunca uma prescrição. Resuma para a pessoa em 3 a 5 linhas e ofereça como sugestão."
+  );
+
+  return sections.join("\n");
+}
+
+// Extrai o texto de uma seção "## Título" de um markdown.
+function extractSection(md, title) {
+  if (!md) return null;
+  const re = new RegExp(`##\\s*${title}\\s*\\n([\\s\\S]*?)(\\n##\\s|$)`, "i");
+  const m = re.exec(md);
+  return m ? m[1].trim() : null;
+}
+
+// Resumo curto de um arquivo: título do frontmatter + primeira seção relevante.
+async function summarizeFile(relPath, preferredSection) {
+  const md = await loadFile(relPath);
+  if (!md) return null;
+  const { meta } = parseFrontmatter(md);
+  const title = meta.title || relPath;
+
+  let text = preferredSection ? extractSection(md, preferredSection) : null;
+  if (!text) {
+    // fallback: primeiro parágrafo após o H1
+    const afterH1 = md.split(/\n#\s.*\n/)[1] || md;
+    text = afterH1.replace(/^---[\s\S]*?---/, "").trim().split("\n\n")[0];
+  }
+  // limita o tamanho para manter a resposta enxuta
+  text = (text || "").trim();
+  if (text.length > 600) text = text.slice(0, 597).trimEnd() + "…";
+  return { title, text };
+}
+
+// ---------------------------------------------------------------------------
+// Servidor MCP
+// ---------------------------------------------------------------------------
+
+const server = new McpServer({
+  name: "leadership-mcp",
+  version: "0.1.0",
+});
+
+server.registerTool(
+  "buscar_orientacao",
+  {
+    title: "Buscar orientação de liderança",
+    description:
+      "Recebe a descrição de uma situação relacional (em uma frase) e retorna orientação " +
+      "comportamental baseada na metodologia Truly Human Leadership de Bob Chapman " +
+      "(Barry-Wehmiller). Classifica o gatilho (conflito, decisão com impacto, feedback, " +
+      "relacionamento interno, interação externa) e consolida filtros, ação e resultado. " +
+      "Use quando a pessoa pedir ajuda para conduzir a parte humana de uma situação.",
+    inputSchema: {
+      situacao: z
+        .string()
+        .min(1)
+        .describe(
+          "Descrição da situação em uma frase, incluindo o destinatário e a tensão. " +
+            'Ex.: "como respondo o email agressivo do colega".'
+        ),
+    },
+  },
+  async ({ situacao }) => {
+    const guidance = await buildGuidance(situacao);
+    return { content: [{ type: "text", text: guidance }] };
+  }
+);
+
+server.registerTool(
+  "listar_gatilhos",
+  {
+    title: "Listar gatilhos de liderança",
+    description:
+      "Retorna a taxonomia dos gatilhos relacionais cobertos pela base de conhecimento, " +
+      "com uma breve descrição de cada um. Útil para navegar as categorias disponíveis.",
+    inputSchema: {},
+  },
+  async () => {
+    const lines = ["# Gatilhos relacionais cobertos\n"];
+    for (const t of TRIGGERS) {
+      const md = await loadFile(t.file);
+      const { meta } = parseFrontmatter(md || "");
+      lines.push(`- **${t.label}** — ${meta.description || "(sem descrição)"}`);
+    }
+    // Sanity: confirma que a estrutura da base está acessível.
+    const dirs = await Promise.all(
+      ["gatilhos", "filtros", "acoes", "resultados"].map(async (d) => `${d}/ (${(await listDir(d)).length})`)
+    );
+    lines.push(`\nEstrutura da base: ${dirs.join(", ")}`);
+    return { content: [{ type: "text", text: lines.join("\n") }] };
+  }
+);
+
+// ---------------------------------------------------------------------------
+
+async function main() {
+  const transport = new StdioServerTransport();
+  await server.connect(transport);
+  // Log apenas em stderr — stdout é reservado para o protocolo MCP.
+  console.error("Leadership MCP server rodando (stdio).");
+}
+
+// Só sobe o transporte stdio quando executado como entrypoint (não ao ser importado,
+// p.ex. pelo smoke-test, que reutiliza buildGuidance/classify).
+if (import.meta.url === `file://${process.argv[1]}`) {
+  main().catch((err) => {
+    console.error("Falha ao iniciar o Leadership MCP:", err);
+    process.exit(1);
+  });
+}
