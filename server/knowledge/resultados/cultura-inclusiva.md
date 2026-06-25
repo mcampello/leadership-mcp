@@ -13,9 +13,9 @@ timestamp: 2026-06-25
 
 ## O que se espera
 
-Para Chapman, cultura não é o que está escrito no quadro da parede — é como as pessoas se tratam
-quando ninguém está medindo. Uma cultura inclusiva é aquela em que cada pessoa, independente de
-cargo, origem ou função, sente que pertence e que sua contribuição importa.
+Na liderança humanista, cultura não é o que está escrito no quadro da parede — é como as pessoas
+se tratam quando ninguém está medindo. Uma cultura inclusiva é aquela em que cada pessoa,
+independente de cargo, origem ou função, sente que pertence e que sua contribuição importa.
 
 ## Como se manifesta
 
@@ -34,8 +34,9 @@ comportamentos viram norma. Inclusão é o resultado de o cuidado ter virado o p
 
 ## O efeito ampliado
 
-Chapman observa um efeito que extrapola a empresa: pessoas que se sentem cuidadas no trabalho
-voltam para casa melhores — mais pacientes, mais presentes. A cultura inclusiva tem impacto que
+Há um efeito que extrapola a empresa — Bob Chapman o descreve bem em *Everybody Matters*:
+pessoas que se sentem cuidadas no trabalho voltam para casa melhores — mais pacientes, mais
+presentes. A cultura inclusiva tem impacto que
 vai além do resultado de negócio; toca a vida das pessoas fora dele.
 
 ## Conexões

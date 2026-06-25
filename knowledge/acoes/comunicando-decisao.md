@@ -16,9 +16,9 @@ timestamp: 2026-06-25
 
 ## O princípio
 
-Chapman distingue liderança de gestão pela forma de comunicar: gestão anuncia a decisão como
-fato consumado; liderança a comunica como responsabilidade compartilhada. O *como* impacta tanto
-quanto o *que*. (Ver [cultura-de-servico.md](../filtros/cultura-de-servico.md).)
+A liderança humanista distingue liderar de gerir pela forma de comunicar: a gestão anuncia a
+decisão como fato consumado; a liderança a comunica como responsabilidade compartilhada. O *como*
+impacta tanto quanto o *que*. (Ver [cultura-de-servico.md](../filtros/cultura-de-servico.md).)
 
 ## Antes de comunicar
 

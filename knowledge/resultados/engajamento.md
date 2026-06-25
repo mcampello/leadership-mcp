@@ -13,7 +13,7 @@ timestamp: 2026-06-25
 
 ## O que se espera
 
-Engajamento, na visão de Chapman, não é um programa de RH nem um resultado de bônus — é a
+Engajamento, na liderança humanista, não é um programa de RH nem um resultado de bônus — é a
 consequência natural de pessoas se sentirem genuinamente valorizadas e confiáveis. Quando alguém
 percebe que importa como ser humano, e não só como executor de tarefas, passa a se importar com
 o trabalho de volta.
@@ -27,16 +27,17 @@ o trabalho de volta.
 
 ## O elo causal
 
-Chapman resume: *"As pessoas querem saber que importam."* O reconhecimento específico e sincero
+Há uma síntese que captura isso: *"as pessoas querem saber que importam"* — Bob Chapman,
+*Everybody Matters*. O reconhecimento específico e sincero
 (ver [reconhecimento.md](../filtros/reconhecimento.md)) e o feedback que descreve em vez de julgar
 (ver [dando-feedback.md](../acoes/dando-feedback.md)) são os comportamentos que, repetidos, produzem
 engajamento. Não é um evento; é o acúmulo de pequenas interações em que a pessoa se sentiu vista.
 
 ## A evidência
 
-A Barry-Wehmiller construiu uma cultura assim e cresceu de US$ 20M para US$ 3,6B em cinco
-décadas — não apesar de cuidar das pessoas, mas por meio disso. O engajamento foi causa, não
-enfeite.
+A Barry-Wehmiller, empresa onde essa abordagem foi levada ao extremo, cresceu de US$ 20M para
+US$ 3,6B em cinco décadas — não apesar de cuidar das pessoas, mas por meio disso. O engajamento
+foi causa, não enfeite. (Caso documentado pela Harvard Business School, 2016.)
 
 ## Conexões
 

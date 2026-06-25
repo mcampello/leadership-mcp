@@ -39,4 +39,4 @@ Qualquer situação onde há tensão, discordância ou ruptura de relacionamento
 
 ## Nota comportamental
 
-Em situações de conflito, a escuta precede qualquer ação. Chapman é explícito: ouvir sem julgamento é o primeiro movimento — não propor solução, não tomar partido.
+Em situações de conflito, a escuta precede qualquer ação. Na liderança humanista, ouvir sem julgamento é o primeiro movimento — não propor solução, não tomar partido.

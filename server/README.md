@@ -1,12 +1,12 @@
 # leadership-mcp
 
 > Base de conhecimento viva sobre **liderança humanista** entregue ao seu assistente de IA via
-> [MCP](https://modelcontextprotocol.io). Baseada na metodologia **Truly Human Leadership®** de
-> Bob Chapman (Barry-Wehmiller).
+> [MCP](https://modelcontextprotocol.io). Inspirada em fontes que se cruzam — Barry-Wehmiller/Bob
+> Chapman, Simon Sinek e a prática de Mario Campello.
 
 Quando você pede ajuda para escrever um e-mail difícil, dar um feedback, comunicar uma decisão
 ou conduzir um conflito, o assistente pode — se você quiser — oferecer uma sugestão sobre a
-**parte humana** da situação, fundamentada em uma metodologia de liderança com impacto
+**parte humana** da situação, fundamentada em princípios de liderança com impacto humano e
 econômico comprovado. A sugestão é sempre uma hipótese, nunca uma prescrição.
 
 ## Instalação (Claude Desktop)
@@ -48,4 +48,5 @@ com fallback para a cópia empacotada quando offline. Configurável por `LEADERS
 
 ## Licença
 
-MIT — Mario Campello. Projeto independente, não afiliado à Barry-Wehmiller.
+MIT — Mario Campello. Projeto independente, não afiliado à Barry-Wehmiller, a Bob Chapman ou a
+Simon Sinek; as referências são para fins educacionais e de reconhecimento intelectual.

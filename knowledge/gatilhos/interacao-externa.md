@@ -38,4 +38,4 @@ Situações onde a pessoa precisa interagir com alguém fora da hierarquia inter
 
 ## Nota comportamental
 
-Relações externas não têm autoridade formal como suporte — o que sustenta a interação é confiança e reciprocidade. Chapman aplica os mesmos princípios de cuidado para dentro e para fora: tratar o fornecedor como alguém cujo sucesso também importa muda a qualidade da parceria.
+Relações externas não têm autoridade formal como suporte — o que sustenta a interação é confiança e reciprocidade. A liderança humanista aplica os mesmos princípios de cuidado para dentro e para fora: tratar o fornecedor como alguém cujo sucesso também importa muda a qualidade da parceria.

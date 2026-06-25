@@ -15,7 +15,7 @@ timestamp: 2026-06-25
 
 ## O primeiro movimento é escutar
 
-Em conflito, Chapman é explícito: **ouvir sem julgamento precede qualquer ação.** Antes de
+Em conflito, vale um princípio simples: **ouvir sem julgamento precede qualquer ação.** Antes de
 propor solução ou se defender, entenda a perspectiva do outro de verdade. A pessoa precisa se
 sentir ouvida antes de conseguir ouvir você.
 
