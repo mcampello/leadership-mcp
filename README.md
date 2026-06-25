@@ -1,92 +1,178 @@
+<div align="center">
+
 # Leadership MCP
 
-> Uma base de conhecimento viva sobre **liderança humanista** — entregue diretamente ao seu
-> assistente de IA. Inspirada em fontes que se cruzam: Barry-Wehmiller/Bob Chapman, Simon Sinek
-> e a prática de Mario Campello.
+### Liderança humanista entregue ao seu assistente de IA — no momento exato em que você lidera.
 
-O Leadership MCP é uma ferramenta open source e gratuita que se conecta ao Claude (ou a
-qualquer cliente compatível com [MCP](https://modelcontextprotocol.io)). Quando você pede ajuda
-para escrever um e-mail difícil, dar um feedback, comunicar uma decisão ou conduzir um conflito,
-o assistente pode — se você quiser — oferecer uma **sugestão sobre a parte humana** da situação,
-fundamentada em princípios de liderança com impacto humano e econômico comprovado.
+Não nos treinamentos. Na hora de escrever o e-mail difícil, dar o feedback, comunicar a decisão.
 
-A sugestão é sempre **uma hipótese, nunca uma prescrição**. Você decide se quer ouvir.
+[![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE)
+[![npm](https://img.shields.io/npm/v/leadership-mcp.svg)](https://www.npmjs.com/package/leadership-mcp)
+[![MCP compatible](https://img.shields.io/badge/MCP-compatible-blue)](https://modelcontextprotocol.io)
+[![Node >=18](https://img.shields.io/badge/Node-%3E%3D18-brightgreen)](https://nodejs.org)
+
+</div>
 
 ---
 
-## A filosofia: por que isso importa
+O **Leadership MCP** é uma ferramenta open source e gratuita que conecta uma base viva de
+**liderança humanista** ao Claude (ou a qualquer cliente compatível com
+[MCP](https://modelcontextprotocol.io)). Quando você pede ajuda para escrever um e-mail tenso,
+dar um feedback, comunicar uma decisão ou conduzir um conflito, o assistente **para, pergunta se
+você quer**, e — se você quiser — molda a resposta a partir de princípios de liderança com
+impacto humano e econômico comprovado.
+
+A orientação é sempre **uma hipótese, nunca uma prescrição**. Você decide se quer ouvir.
+
+---
+
+## 🎯 O problema
+
+Liderança não acontece nos treinamentos. Acontece nas interações: no e-mail que você está prestes
+a enviar, no feedback que vai dar daqui a cinco minutos, no comunicado de uma decisão difícil.
+
+E é justamente nesse momento — sob pressão, com pressa — que o melhor princípio de liderança fica
+inacessível. A gente cai no instinto ou no "corporativês". A boa intenção existe, mas a forma
+escala o conflito em vez de resolvê-lo.
+
+O Leadership MCP coloca o princípio certo **no instante certo**, dentro da ferramenta que você já
+usa para escrever.
+
+---
+
+## ⚙️ Como funciona na prática
+
+A inteligência mora num detalhe de comportamento: o assistente **não despeja teoria**. Ele detecta
+que a tarefa é relacional, pausa, e oferece a escolha — e só então molda a resposta.
+
+> **Você:** preciso responder esse e-mail de um colega que está me acusando de atrasar o projeto dele.
+>
+> **Claude:** Percebi que isso envolve uma conversa difícil com um colega. Posso consultar o
+> Leadership MCP — uma base sobre liderança humanista, com orientações comprovadamente eficazes
+> sobre como conduzir esse tipo de situação — e escrever já com base nisso. Ou prefere que eu
+> responda direto?
+>
+> **Você:** pode consultar.
+>
+> **Claude:** *(consulta `buscar_orientacao`)* Vou começar pelo fato em vez da defesa, assumir
+> boa intenção e fechar com um próximo passo concreto — é o que reduz a escalada num e-mail tenso.
+> Aqui está o rascunho: …
+
+A consulta **molda a resposta desde o início** — não é um adendo no final. E a pergunta é feita
+uma única vez: se você não quiser, ele responde direto, sem insistir.
+
+---
+
+## 🔄 O que muda
+
+| Resposta "crua" (instinto sob pressão) | Resposta moldada pela base |
+| --- | --- |
+| "Você não entregou de novo." | "A entrega combinada para sexta não chegou — imagino que tenha surgido algo." |
+| Acusa o caráter | Descreve o fato e o comportamento |
+| Termina no problema | Termina num próximo passo: "consegue me dar uma posição até amanhã às 12h?" |
+| Fecha a porta | Abre a porta para a outra pessoa explicar |
+
+A base é organizada em quatro camadas encadeadas — **gatilho → filtros → ação → resultado** — que
+o servidor monta em uma orientação consolidada a partir da situação que você descreve:
+
+1. **Gatilho** — a natureza relacional da situação (conflito, feedback, decisão com impacto,
+   relacionamento interno, interação externa).
+2. **Filtros** — os pilares da liderança humanista (escuta ativa, reconhecimento, cultura de serviço).
+3. **Ação** — uma hipótese de comportamento concreta para aquela situação.
+4. **Resultado** — o efeito esperado (engajamento, confiança, cultura inclusiva).
+
+---
+
+## 👥 Para quem é
+
+- **Líderes e gestores** que conduzem times e tomam decisões que afetam pessoas.
+- **Fundadores e empreendedores** construindo a cultura desde o começo.
+- **Líderes técnicos, PMs e coordenadores** que lideram sem necessariamente ter "chefe" no título.
+- **RH e pessoas de cultura** que querem uma linguagem comum de liderança.
+- **Qualquer pessoa** que escreve mensagens difíceis no trabalho.
+
+Não exige cargo de chefia. Exige conduzir relações — e querer conduzi-las melhor.
+
+---
+
+## ✅ O que você vai realizar
+
+- **Conduzir um conflito sem escalá-lo** — separar fato de acusação, baixar a temperatura.
+- **Dar feedback que constrói** em vez de ferir — e receber feedback sem se fechar.
+- **Comunicar uma decisão difícil** (corte, mudança, esforço extra) preservando a confiança do time.
+- **Escrever o e-mail crítico** que registra o que precisa sem incendiar a relação.
+- **Reconhecer de verdade** — comportamento, impacto e sentimento, não elogio genérico.
+
+O objetivo final não é "responder melhor um e-mail". É construir, interação por interação,
+**engajamento, confiança e uma cultura inclusiva** — os resultados que a base persegue.
+
+---
+
+## 🏢 A vantagem em escala numa empresa
+
+O ganho de uma pessoa usando isso é real. O ganho de **um time inteiro** usando a **mesma base
+viva** é de outra ordem:
+
+- **Uma linguagem de liderança comum.** Todo mundo conduz conflito, feedback e decisões a partir
+  dos mesmos princípios. A qualidade da liderança para de depender de quem por acaso é o gestor de
+  cada um.
+- **Uma base central e viva.** Atualizou a forma como a empresa lida com mudanças? Um `git push`
+  no repositório e **todos recebem a versão nova na próxima conversa** — sem reinstalar, sem
+  retreinar, sem reenviar comunicado.
+- **Personalizável para a sua cultura.** Aponte o MCP para um fork com os valores e a linguagem da
+  sua empresa (via `LEADERSHIP_MCP_REPO` / `LEADERSHIP_MCP_REF`). A orientação passa a falar a
+  voz da casa.
+- **Privado por design.** Nada das conversas sai da máquina de cada pessoa — o servidor só lê os
+  arquivos `.md` públicos do repositório. Cultura distribuída sem expor dados.
+
+Em vez de um treinamento que evapora em duas semanas, a liderança humanista vira **infraestrutura**:
+está presente em cada interação, igual para todos, e melhora com um commit.
+
+---
+
+## 📈 As evidências
 
 A premissa é simples e radical: **as pessoas não são recursos a serviço do negócio; o negócio
-existe a serviço das pessoas.** Liderar, nessa visão, é colocar-se a serviço de quem se lidera —
-e a forma como você conduz cada interação humana importa tanto quanto a decisão em si.
+existe a serviço das pessoas.** E não é teoria sem lastro:
 
-Não é teoria sem lastro. A abordagem tem evidência concreta:
-
-- Na Barry-Wehmiller, levada ao extremo por Bob Chapman, a empresa cresceu de **US$ 20M para
+- Na **Barry-Wehmiller**, levada ao extremo por Bob Chapman, a empresa cresceu de **US$ 20M para
   US$ 3,6B** em cerca de 50 anos — caso documentado pela **Harvard Business School (2016)** e
-  ensinado em mais de 70 escolas.
+  ensinado em mais de **70 escolas**.
 - *"Medimos o sucesso pela forma como tocamos a vida das pessoas."* — Bob Chapman,
   *Everybody Matters* (2015, rev. 2025).
-- Simon Sinek, em *Leaders Eat Last*, mostra por que equipes em que as pessoas se sentem seguras
-  e cuidadas performam melhor — o líder que "come por último" constrói confiança.
+- **Simon Sinek**, em *Leaders Eat Last*, mostra por que equipes em que as pessoas se sentem
+  seguras e cuidadas performam melhor — o líder que "come por último" constrói confiança.
 
-O Leadership MCP destila esses princípios e os torna **acessíveis no momento exato** em que você
-está prestes a interagir com outra pessoa — porque é aí que a liderança acontece, não nos
-treinamentos. As inspirações completas estão [no fim deste README](#inspira%C3%A7%C3%B5es).
-
----
-
-## O que a ferramenta faz
-
-A base de conhecimento é organizada em quatro camadas encadeadas:
-
-```
-gatilho  →  filtros  →  ação  →  resultado
-```
-
-1. **Gatilho** — identifica a natureza relacional da situação (conflito, feedback, decisão com
-   impacto, relacionamento interno, interação externa).
-2. **Filtros** — qualificam a resposta com os pilares da liderança humanista (escuta ativa,
-   reconhecimento, cultura de serviço).
-3. **Ação** — uma hipótese de comportamento concreta para aquela situação.
-4. **Resultado** — o efeito esperado quando o comportamento é aplicado (engajamento, confiança,
-   cultura inclusiva).
-
-O servidor MCP expõe duas ferramentas ao Claude:
-
-| Ferramenta | O que faz |
-| --- | --- |
-| `buscar_orientacao(situacao)` | Classifica o gatilho de uma situação descrita em uma frase e retorna a orientação consolidada (filtros + ação + resultado). |
-| `listar_gatilhos()` | Retorna a taxonomia de gatilhos cobertos, para navegação e transparência. |
+O Leadership MCP destila esses princípios e os torna acessíveis no momento exato da interação —
+porque é aí que a liderança acontece. As fontes completas estão [no fim deste README](#inspirações).
 
 ---
 
-## Instalação (Claude Desktop)
+## 🚀 Instalação (Claude Desktop)
 
 São dois passos: **(1)** colar o prompt de sistema e **(2)** registrar o servidor MCP.
 
 ### 1. Cole o prompt de sistema
 
 Abra [`prompt-sistema.md`](prompt-sistema.md), copie o conteúdo da seção **Prompt** e cole nas
-instruções personalizadas do Claude (Settings → Profile / Custom Instructions). Ele ensina o
-assistente a detectar situações relacionais e a oferecer — sem impor — uma sugestão.
+instruções personalizadas do Claude (**Settings → Profile / Custom Instructions**). Ele ensina o
+assistente a detectar situações relacionais e a oferecer — sem impor — a consulta.
 
 ### 2. Registre o servidor MCP
 
 > ⚠️ **Atenção:** este é um servidor MCP **local** (roda na sua máquina via `npx`). Ele **não**
-> se instala pela janela _"Adicionar conector personalizado"_ do Claude — aquela janela é só para
-> servidores **remotos** com uma URL `https://`. A instalação correta é editar o arquivo de
-> configuração, como descrito abaixo. (Por isso ele funciona no Claude **Desktop**, não no web/celular.)
+> se instala pela janela _"Adicionar conector personalizado"_ do Claude — aquela é só para
+> servidores **remotos** com URL `https://`. A instalação correta é editar o arquivo de
+> configuração abaixo. (Por isso funciona no Claude **Desktop**, não no web/celular.)
 
 Edite o arquivo de configuração do Claude Desktop:
 
 - **macOS:** `~/Library/Application Support/Claude/claude_desktop_config.json`
 - **Windows:** `%APPDATA%\Claude\claude_desktop_config.json`
 
-> 💡 Atalho no Claude Desktop: **Settings → Developer → Edit Config** abre esse arquivo direto.
+> 💡 Atalho: **Settings → Developer → Edit Config** abre esse arquivo direto.
 
-Adicione o bloco abaixo (se o arquivo já tiver outros `mcpServers`, basta acrescentar a entrada
-`"leadership"` dentro do bloco existente):
+Adicione o bloco abaixo (se já houver outros `mcpServers`, basta acrescentar a entrada `"leadership"`):
 
 ```json
 {
@@ -99,11 +185,11 @@ Adicione o bloco abaixo (se o arquivo já tiver outros `mcpServers`, basta acres
 }
 ```
 
-Depois **reinicie o Claude Desktop**. Pronto — pergunte algo como *"como respondo um e-mail
-agressivo de um colega?"* e veja a sugestão aparecer.
+Depois **reinicie o Claude Desktop**. Pronto — peça algo como *"como respondo um e-mail agressivo
+de um colega?"* e veja a orientação moldar a resposta.
 
-> **Rodando a partir do código (para desenvolvimento):** se você clonou este repositório e quer
-> usar a sua cópia local em vez da versão publicada no npm, aponte para o `index.js`:
+> **Rodando a partir do código (desenvolvimento):** para usar sua cópia local em vez da versão do
+> npm, aponte para o `index.js`:
 >
 > ```json
 > {
@@ -118,16 +204,32 @@ agressivo de um colega?"* e veja a sugestão aparecer.
 
 ---
 
-## Como o conhecimento se mantém vivo (e como atualizar)
+## 🛠️ Detalhes técnicos
+
+<details>
+<summary><strong>As ferramentas MCP expostas ao Claude</strong></summary>
+
+<br>
+
+| Ferramenta | O que faz |
+| --- | --- |
+| `buscar_orientacao(situacao)` | Classifica o gatilho de uma situação descrita em uma frase e retorna a orientação consolidada (filtros + ação + resultado). |
+| `listar_gatilhos()` | Retorna a taxonomia de gatilhos cobertos, para navegação e transparência. |
+
+</details>
+
+<details>
+<summary><strong>Como o conhecimento se mantém vivo</strong></summary>
+
+<br>
 
 O servidor lê os arquivos `.md` da base **direto do GitHub** a cada sessão, com **fallback para
-uma cópia empacotada** quando não há internet. Isso significa:
+uma cópia empacotada** quando não há internet:
 
-- **Atualizar conteúdo de liderança** → basta um `git push` neste repositório. Os usuários
-  recebem a versão nova na próxima conversa, **sem reinstalar nem reiniciar nada**.
-- **Funciona offline** → sem rede, o servidor usa a cópia que veio com o pacote. Nunca quebra.
-- **Privado** → nada das suas conversas sai da sua máquina; o servidor só busca os `.md`
-  públicos deste repositório.
+- **Atualizar conteúdo** → basta um `git push`. Os usuários recebem a versão nova na próxima
+  conversa, sem reinstalar nem reiniciar.
+- **Funciona offline** → sem rede, usa a cópia que veio com o pacote. Nunca quebra.
+- **Privado** → nada das conversas sai da sua máquina; só busca os `.md` públicos do repositório.
 
 Configurável por variáveis de ambiente (opcional):
 
@@ -136,9 +238,12 @@ Configurável por variáveis de ambiente (opcional):
 | `LEADERSHIP_MCP_REPO` | `mcampello/leadership-mcp` | repositório `owner/repo` de onde ler a base |
 | `LEADERSHIP_MCP_REF` | `main` | branch/ref a usar |
 
----
+</details>
 
-## Estrutura do repositório
+<details>
+<summary><strong>Estrutura do repositório</strong></summary>
+
+<br>
 
 ```
 .
@@ -161,9 +266,12 @@ Configurável por variáveis de ambiente (opcional):
 A pasta `server/knowledge/` é uma **cópia** de `knowledge/` (fallback offline), gerada por
 `npm run sync-knowledge` antes de publicar — a fonte canônica é sempre `knowledge/` na raiz.
 
----
+</details>
 
-## Desenvolvimento
+<details>
+<summary><strong>Desenvolvimento</strong></summary>
+
+<br>
 
 ```bash
 cd server
@@ -179,16 +287,18 @@ npm run sync-knowledge   # atualiza a cópia empacotada a partir de ../knowledge
 npm publish --access public
 ```
 
+</details>
+
 ---
 
-## Como contribuir
+## 🤝 Como contribuir
 
 A base de conhecimento é o coração do projeto — contribuições são bem-vindas:
 
 - **Conteúdo:** abra um PR adicionando ou refinando arquivos em `knowledge/`. Mantenha o formato
-  (markdown com frontmatter YAML: `type`, `title`, `description`, `tags`, `links`, `timestamp`)
-  e os campos `links:` apontando para as outras camadas — é assim que o servidor monta a
-  orientação consolidada.
+  (markdown com frontmatter YAML: `type`, `title`, `description`, `tags`, `links`, `timestamp`) e
+  os campos `links:` apontando para as outras camadas — é assim que o servidor monta a orientação
+  consolidada.
 - **Código:** melhorias no servidor MCP, na classificação de gatilhos ou nos testes.
 
 Todo o conteúdo é uma **hipótese de comportamento**, ancorada na liderança humanista — não uma
@@ -206,8 +316,8 @@ informam uma prática própria de liderança humanista:
   Barry-Wehmiller University (_Listen Like a Leader_); caso da Harvard Business School (2016).
 - **Simon Sinek** — _Leaders Eat Last_, _Start With Why_ e palestras sobre confiança, segurança
   e propósito.
-- **A experiência e a prática de liderança de Mario Campello** — o que funciona no dia a dia
-  real de conduzir pessoas e relações.
+- **A experiência e a prática de liderança de Mario Campello** — o que funciona no dia a dia real
+  de conduzir pessoas e relações.
 
 As citações e dados concretos ao longo da base creditam suas fontes; os princípios são expressos
 em voz própria. Este projeto é independente e não é afiliado nem endossado pela Barry-Wehmiller,
