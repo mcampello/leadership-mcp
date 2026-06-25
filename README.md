@@ -347,6 +347,12 @@ em voz própria. Este projeto é independente e não é afiliado nem endossado p
 por Bob Chapman ou por Simon Sinek — as referências são feitas para fins educacionais e de
 reconhecimento intelectual.
 
+# Conecte-se
+Para reuniões, mentoria, treinamento e desenvolvimento entre em contato:
+
+- [https://campello.me](https://campello.me)
+- [https://linkedin.com/in/mcampello](https://linkedin.com/in/mcampello)
+
 ## Licença
 
 [MIT](LICENSE) — use, adapte e distribua livremente.
