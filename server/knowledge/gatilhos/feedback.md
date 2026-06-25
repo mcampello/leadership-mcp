@@ -8,6 +8,7 @@ links:
   - filtros/reconhecimento.md
   - acoes/dando-feedback.md
   - acoes/recebendo-feedback.md
+  - acoes/conversa-que-voce-vem-adiando.md
 timestamp: 2026-06-25
 ---
 
@@ -26,6 +27,8 @@ Situações onde alguém precisa dar ou receber uma avaliação — sobre compor
 - "meu gestor me disse que..."
 - "quero elogiar alguém do time..."
 - "preciso corrigir o comportamento de..."
+- "tem uma conversa difícil que venho adiando..."
+- "preciso falar com alguém sobre algo que está me incomodando..."
 
 ## Perguntas de filtro
 
@@ -39,6 +42,7 @@ Situações onde alguém precisa dar ou receber uma avaliação — sobre compor
 - Filtro secundário: [escuta-ativa.md](../filtros/escuta-ativa.md)
 - Ação (dar): [dando-feedback.md](../acoes/dando-feedback.md)
 - Ação (receber): [recebendo-feedback.md](../acoes/recebendo-feedback.md)
+- Ação (conversa adiada): [conversa-que-voce-vem-adiando.md](../acoes/conversa-que-voce-vem-adiando.md)
 
 ## Nota comportamental
 

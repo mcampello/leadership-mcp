@@ -7,6 +7,7 @@ links:
   - filtros/escuta-ativa.md
   - filtros/cultura-de-servico.md
   - acoes/comunicando-decisao.md
+  - acoes/conversa-de-enrolamento.md
 timestamp: 2026-06-25
 ---
 
@@ -25,6 +26,8 @@ Situações onde a pessoa precisa tomar ou comunicar uma decisão que afeta outr
 - "vou fazer uma mudança que vai impactar..."
 - "como apresento essa decisão para a liderança..."
 - "precisamos demitir alguém..."
+- "vou delegar um projeto novo para alguém..."
+- "como faço o kickoff desse projeto com a pessoa..."
 
 ## Perguntas de filtro
 
@@ -37,6 +40,7 @@ Situações onde a pessoa precisa tomar ou comunicar uma decisão que afeta outr
 - Filtro principal: [cultura-de-servico.md](../filtros/cultura-de-servico.md)
 - Filtro secundário: [escuta-ativa.md](../filtros/escuta-ativa.md)
 - Ação sugerida: [comunicando-decisao.md](../acoes/comunicando-decisao.md)
+- Ação ao delegar/iniciar projeto: [conversa-de-enrolamento.md](../acoes/conversa-de-enrolamento.md)
 
 ## Nota comportamental
 

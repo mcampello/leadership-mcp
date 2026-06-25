@@ -5,7 +5,9 @@ description: Situações de tensão explícita ou implícita entre pessoas dentr
 tags: [conflito, tensão, crise, desentendimento]
 links:
   - filtros/escuta-ativa.md
+  - filtros/presenca-intencional.md
   - acoes/durante-o-conflito.md
+  - acoes/encerrando-discussao-em-circulos.md
 timestamp: 2026-06-25
 ---
 
@@ -25,6 +27,8 @@ Qualquer situação onde há tensão, discordância ou ruptura de relacionamento
 - "fui injustiçado em..."
 - "preciso resolver uma situação com..."
 - "a relação com X está difícil..."
+- "a discussão fica andando em círculos..."
+- "não chegamos a um acordo sobre..."
 
 ## Perguntas de filtro
 
@@ -35,7 +39,9 @@ Qualquer situação onde há tensão, discordância ou ruptura de relacionamento
 ## Conexões
 
 - Filtro principal: [escuta-ativa.md](../filtros/escuta-ativa.md)
+- Filtro de presença: [presenca-intencional.md](../filtros/presenca-intencional.md)
 - Ação sugerida: [durante-o-conflito.md](../acoes/durante-o-conflito.md)
+- Ação para debate travado: [encerrando-discussao-em-circulos.md](../acoes/encerrando-discussao-em-circulos.md)
 
 ## Nota comportamental
 

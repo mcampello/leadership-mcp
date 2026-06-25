@@ -41,6 +41,7 @@ Pilares comportamentais da liderança humanista que qualificam a resposta.
 - [escuta-ativa.md](filtros/escuta-ativa.md) — presença, intenção de entender, confiança, cuidado, respeito
 - [reconhecimento.md](filtros/reconhecimento.md) — comportamento, impacto e sentimento
 - [cultura-de-servico.md](filtros/cultura-de-servico.md) — servir antes de ser servido, dentro e fora
+- [presenca-intencional.md](filtros/presenca-intencional.md) — regular o próprio estado; escutar para entender, não consertar
 
 ### /acoes
 Hipóteses de comportamento concretas para cada situação.
@@ -51,6 +52,9 @@ Hipóteses de comportamento concretas para cada situação.
 - [comunicando-decisao.md](acoes/comunicando-decisao.md)
 - [escrevendo-email-critico.md](acoes/escrevendo-email-critico.md)
 - [comunicando-mudanca.md](acoes/comunicando-mudanca.md)
+- [conversa-de-enrolamento.md](acoes/conversa-de-enrolamento.md)
+- [encerrando-discussao-em-circulos.md](acoes/encerrando-discussao-em-circulos.md)
+- [conversa-que-voce-vem-adiando.md](acoes/conversa-que-voce-vem-adiando.md)
 
 ### /resultados
 Resultados esperados quando os comportamentos são aplicados.
