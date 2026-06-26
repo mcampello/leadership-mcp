@@ -1,0 +1,28 @@
+# Bloco a adicionar no Caddyfile do projeto docs-site (VPS).
+# O token é lido da env MCP_BEARER_TOKEN do container Caddy (definida no .env do docs-site).
+#
+# Após adicionar: `caddy validate` e reload graceful. Ver deploy/README.md.
+
+leadership-mcp.campello.me {
+	encode gzip zstd
+	header {
+		X-Content-Type-Options nosniff
+		Referrer-Policy strict-origin-when-cross-origin
+	}
+
+	# Autenticação na borda: exige Authorization: Bearer <MCP_BEARER_TOKEN>.
+	@unauthorized not header Authorization "Bearer {$MCP_BEARER_TOKEN}"
+	respond @unauthorized 401 {
+		body "Unauthorized"
+		close
+	}
+
+	# Streamable HTTP do MCP usa respostas SSE de longa duração — sem timeout no upstream.
+	reverse_proxy leadership-mcp:3000 {
+		flush_interval -1
+		transport http {
+			read_timeout 0
+			write_timeout 0
+		}
+	}
+}
