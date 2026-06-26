@@ -10,7 +10,9 @@
 
 import { McpServer } from "@modelcontextprotocol/sdk/server/mcp.js";
 import { StdioServerTransport } from "@modelcontextprotocol/sdk/server/stdio.js";
+import { StreamableHTTPServerTransport } from "@modelcontextprotocol/sdk/server/streamableHttp.js";
 import { z } from "zod";
+import { createServer as createHttpServer } from "node:http";
 import { realpathSync } from "node:fs";
 import { fileURLToPath } from "node:url";
 import { loadFile, listDir, parseFrontmatter } from "./knowledge-loader.js";
@@ -253,69 +255,131 @@ async function summarizeFile(relPath, preferredSection) {
 // Servidor MCP
 // ---------------------------------------------------------------------------
 
-const server = new McpServer({
-  name: "leadership-mcp",
-  version: "0.1.0",
-});
+// Cria uma instância do servidor MCP com as duas ferramentas registradas. No modo stdio
+// usamos uma única instância; no modo HTTP stateless criamos uma por request (recomendação
+// do SDK — evita vazamento de estado entre clientes concorrentes).
+export function createServer() {
+  const server = new McpServer({
+    name: "leadership-mcp",
+    version: "0.1.0",
+  });
 
-server.registerTool(
-  "buscar_orientacao",
-  {
-    title: "Buscar orientação de liderança",
-    description:
-      "Recebe a descrição de uma situação relacional (em uma frase) e retorna orientação " +
-      "comportamental baseada em princípios de liderança humanista. Classifica o gatilho " +
-      "(conflito, decisão com impacto, feedback, relacionamento interno, interação externa) e " +
-      "consolida filtros, ação e resultado. " +
-      "Use quando a pessoa pedir ajuda para conduzir a parte humana de uma situação.",
-    inputSchema: {
-      situacao: z
-        .string()
-        .min(1)
-        .describe(
-          "Descrição da situação em uma frase, incluindo o destinatário e a tensão. " +
-            'Ex.: "como respondo o email agressivo do colega".'
-        ),
+  server.registerTool(
+    "buscar_orientacao",
+    {
+      title: "Buscar orientação de liderança",
+      description:
+        "Recebe a descrição de uma situação relacional (em uma frase) e retorna orientação " +
+        "comportamental baseada em princípios de liderança humanista. Classifica o gatilho " +
+        "(conflito, decisão com impacto, feedback, relacionamento interno, interação externa) e " +
+        "consolida filtros, ação e resultado. " +
+        "Use quando a pessoa pedir ajuda para conduzir a parte humana de uma situação.",
+      inputSchema: {
+        situacao: z
+          .string()
+          .min(1)
+          .describe(
+            "Descrição da situação em uma frase, incluindo o destinatário e a tensão. " +
+              'Ex.: "como respondo o email agressivo do colega".'
+          ),
+      },
     },
-  },
-  async ({ situacao }) => {
-    const guidance = await buildGuidance(situacao);
-    return { content: [{ type: "text", text: guidance }] };
-  }
-);
-
-server.registerTool(
-  "listar_gatilhos",
-  {
-    title: "Listar gatilhos de liderança",
-    description:
-      "Retorna a taxonomia dos gatilhos relacionais cobertos pela base de conhecimento, " +
-      "com uma breve descrição de cada um. Útil para navegar as categorias disponíveis.",
-    inputSchema: {},
-  },
-  async () => {
-    const lines = ["# Gatilhos relacionais cobertos\n"];
-    for (const t of TRIGGERS) {
-      const md = await loadFile(t.file);
-      const { meta } = parseFrontmatter(md || "");
-      lines.push(`- **${t.label}** — ${meta.description || "(sem descrição)"}`);
+    async ({ situacao }) => {
+      const guidance = await buildGuidance(situacao);
+      return { content: [{ type: "text", text: guidance }] };
     }
-    // Sanity: confirma que a estrutura da base está acessível.
-    const dirs = await Promise.all(
-      ["gatilhos", "filtros", "acoes", "resultados"].map(async (d) => `${d}/ (${(await listDir(d)).length})`)
-    );
-    lines.push(`\nEstrutura da base: ${dirs.join(", ")}`);
-    return { content: [{ type: "text", text: lines.join("\n") }] };
-  }
-);
+  );
+
+  server.registerTool(
+    "listar_gatilhos",
+    {
+      title: "Listar gatilhos de liderança",
+      description:
+        "Retorna a taxonomia dos gatilhos relacionais cobertos pela base de conhecimento, " +
+        "com uma breve descrição de cada um. Útil para navegar as categorias disponíveis.",
+      inputSchema: {},
+    },
+    async () => {
+      const lines = ["# Gatilhos relacionais cobertos\n"];
+      for (const t of TRIGGERS) {
+        const md = await loadFile(t.file);
+        const { meta } = parseFrontmatter(md || "");
+        lines.push(`- **${t.label}** — ${meta.description || "(sem descrição)"}`);
+      }
+      // Sanity: confirma que a estrutura da base está acessível.
+      const dirs = await Promise.all(
+        ["gatilhos", "filtros", "acoes", "resultados"].map(async (d) => `${d}/ (${(await listDir(d)).length})`)
+      );
+      lines.push(`\nEstrutura da base: ${dirs.join(", ")}`);
+      return { content: [{ type: "text", text: lines.join("\n") }] };
+    }
+  );
+
+  return server;
+}
 
 // ---------------------------------------------------------------------------
+// Transportes
+// ---------------------------------------------------------------------------
 
-async function main() {
+// stdio: usado pelo pacote npm / Claude Desktop. Uma única instância de servidor.
+async function startStdio() {
+  const server = createServer();
   const transport = new StdioServerTransport();
   await server.connect(transport);
   // Log apenas em stderr — stdout é reservado para o protocolo MCP.
   console.error("Leadership MCP server rodando (stdio).");
+}
+
+// HTTP (Streamable HTTP, stateless): usado no deploy do VPS atrás do Caddy. Cada request
+// recebe um par server+transport novo e descartável — sem sessão, sem estado compartilhado.
+// A autenticação (Bearer) é feita na borda (Caddy); aqui só tratamos o protocolo MCP.
+async function startHttp(port) {
+  const httpServer = createHttpServer(async (req, res) => {
+    // Healthcheck simples para o Docker/Caddy (não faz parte do protocolo MCP).
+    if (req.method === "GET" && req.url === "/health") {
+      res.writeHead(200, { "Content-Type": "text/plain" });
+      res.end("ok");
+      return;
+    }
+
+    if (req.url !== "/" && req.url !== "/mcp") {
+      res.writeHead(404, { "Content-Type": "application/json" });
+      res.end(JSON.stringify({ jsonrpc: "2.0", error: { code: -32601, message: "Not found" }, id: null }));
+      return;
+    }
+
+    try {
+      const server = createServer();
+      const transport = new StreamableHTTPServerTransport({ sessionIdGenerator: undefined });
+      // Encerra o par server+transport quando a conexão fechar (modo descartável).
+      res.on("close", () => {
+        transport.close();
+        server.close();
+      });
+      await server.connect(transport);
+      await transport.handleRequest(req, res);
+    } catch (err) {
+      console.error("Erro ao tratar request MCP:", err);
+      if (!res.headersSent) {
+        res.writeHead(500, { "Content-Type": "application/json" });
+        res.end(JSON.stringify({ jsonrpc: "2.0", error: { code: -32603, message: "Internal server error" }, id: null }));
+      }
+    }
+  });
+
+  httpServer.listen(port, () => {
+    console.error(`Leadership MCP server rodando (HTTP) na porta ${port}.`);
+  });
+}
+
+async function main() {
+  const httpPort = process.env.MCP_HTTP_PORT;
+  if (httpPort) {
+    await startHttp(Number(httpPort));
+  } else {
+    await startStdio();
+  }
 }
 
 // Só sobe o transporte stdio quando executado como entrypoint (não ao ser importado,
