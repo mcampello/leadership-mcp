@@ -21,10 +21,10 @@ tarefas vivem no board do projeto (Linear).
 - [x] `CODE_OF_CONDUCT.md` (Contributor Covenant 2.1)
 - [x] CI de smoke test (`.github/workflows/ci.yml`, Node 18/20/22)
 - [x] `GROWTH.md` (este quadro)
-- [ ] Landing dedicada da marca — casos de uso + demo "antes/depois" (ponta de lança)
-- [ ] README bilíngue (EN + PT) orientado a conversão
-- [ ] Base de materiais de marketing (`/marketing`)
-- [ ] Materiais de parceria (`/marketing/parcerias`)
+- [x] Landing dedicada da marca — casos de uso + demo "antes/depois" (ponta de lança)
+- [x] README bilíngue (EN + PT) orientado a conversão
+- [x] Base de materiais de marketing (`/marketing`)
+- [x] Materiais de parceria (`/marketing/parcerias`) — pitch, white-label, templates de outreach
 - [ ] Textos de submissão a registries MCP + empacotamento 1‑clique
 - [ ] ~~Web app "experimente agora"~~ — *adiado* (landing + demo + conector cobrem o valor)
 
