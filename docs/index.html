@@ -3,10 +3,10 @@
 <head>
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>Leadership MCP — liderança humanista no momento em que você lidera</title>
-<meta name="description" content="O treinamento de liderança evapora em semanas. O Leadership MCP entrega o princípio certo no instante em que você escreve o e-mail difícil, dá o feedback, comunica a decisão." />
-<meta property="og:title" content="Leadership MCP — liderança no momento da verdade" />
-<meta property="og:description" content="Liderança humanista entregue ao seu assistente de IA, na hora exata em que você lidera." />
+<title>Leadership MCP — seu assistente percebe o momento difícil e sugere a resposta humana</title>
+<meta name="description" content="Você não precisa lembrar de nada. Quando surge o e-mail tenso, o feedback, a decisão dura, o Leadership MCP percebe o momento e molda a resposta por princípios de liderança humanista." />
+<meta property="og:title" content="Leadership MCP — ele percebe o momento. Você decide." />
+<meta property="og:description" content="Liderança humanista que aparece sozinha, no instante em que importa — dentro do assistente de IA que você já usa." />
 <meta property="og:type" content="website" />
 <style>
   :root{
@@ -70,8 +70,72 @@
   footer{padding:48px 0 64px; color:var(--muted); font-size:.9rem}
   footer a{color:var(--muted); text-decoration:underline}
   .kicker{color:var(--warm); font-weight:700}
+  .steps2{grid-template-columns:1fr 1fr}
+  .step .code{
+    margin:16px 0 0; padding:16px 18px; background:var(--ink); color:#eef2f4;
+    border-radius:12px; overflow-x:auto; font-size:.86rem; line-height:1.5;
+    font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;
+  }
+  .step .code code{white-space:pre; color:inherit}
+  .note{
+    margin-top:24px; padding:16px 20px; background:var(--warm-soft); border-radius:12px;
+    color:var(--ink); font-size:.95rem; max-width:70ch;
+  }
+  /* chat mockup */
+  .chat{max-width:660px; margin:36px auto 0; display:flex; flex-direction:column; gap:14px}
+  .bubble{padding:14px 18px; border-radius:18px; max-width:84%; font-size:1rem; line-height:1.5}
+  .bubble.user{align-self:flex-end; background:var(--accent); color:#fff; border-bottom-right-radius:6px}
+  .bubble.bot{align-self:flex-start; background:var(--card); border:1px solid var(--line);
+    color:var(--ink); border-bottom-left-radius:6px; box-shadow:0 2px 10px rgba(28,37,48,.05)}
+  .chip{display:inline-flex; align-items:center; gap:6px; margin-bottom:10px; font-size:.72rem;
+    font-weight:800; text-transform:uppercase; letter-spacing:.06em; color:var(--accent);
+    background:var(--accent-soft); padding:5px 11px; border-radius:999px}
+  .chat-pair{display:grid; grid-template-columns:1fr 1fr; gap:24px; margin-top:36px; align-items:stretch}
+  .chat-col{background:#f4f1ea; border:1px solid var(--line); border-radius:20px; padding:20px 22px 26px}
+  .chat-label{margin:0 0 14px; padding-bottom:12px; border-bottom:1px solid var(--line);
+    font-size:.82rem; font-weight:800; color:var(--accent); text-transform:uppercase; letter-spacing:.06em}
+  .chat-col .chat{margin:0; max-width:none; gap:12px}
+  .chat-col .bubble{max-width:88%; font-size:.97rem}
+  /* copy-prompt modal */
+  .modal-overlay{position:fixed; inset:0; background:rgba(20,28,40,.55); display:none;
+    align-items:center; justify-content:center; padding:20px; z-index:50}
+  .modal-overlay.open{display:flex}
+  .modal{background:var(--card); border-radius:20px; max-width:640px; width:100%; max-height:88vh;
+    overflow:auto; padding:30px; position:relative; box-shadow:0 24px 70px rgba(20,28,40,.32)}
+  .modal h3{font-size:1.3rem; margin:.2em 0 6px}
+  .modal .sub{color:var(--muted); margin:0 0 22px; font-size:.98rem}
+  .modal-close{position:absolute; top:14px; right:18px; background:none; border:none;
+    font-size:1.6rem; color:var(--muted); cursor:pointer; line-height:1}
+  .copied-flag{display:inline-flex; align-items:center; gap:7px; color:var(--accent);
+    font-weight:800; font-size:.8rem; text-transform:uppercase; letter-spacing:.05em;
+    background:var(--accent-soft); padding:6px 12px; border-radius:999px}
+  .tabs{display:flex; gap:4px; flex-wrap:wrap; border-bottom:1px solid var(--line); margin-bottom:18px}
+  .tab{padding:9px 15px; border:none; background:none; font-weight:700; color:var(--muted);
+    cursor:pointer; border-bottom:2px solid transparent; font-size:.95rem}
+  .tab.active{color:var(--accent); border-bottom-color:var(--accent)}
+  .tab-panel{display:none}
+  .tab-panel.active{display:block}
+  .tab-panel ol{margin:0; padding-left:1.2em; color:var(--ink); line-height:1.7; font-size:1rem}
+  .tab-panel li{margin-bottom:6px}
+  .tab-panel .hint{margin-top:16px; padding:13px 15px; background:var(--warm-soft);
+    border-radius:10px; font-size:.9rem; color:var(--ink)}
+  .tab.tab-primary{background:var(--accent-soft); color:var(--accent);
+    border-radius:10px 10px 0 0; font-size:1.02rem; padding:11px 16px}
+  .tab.tab-primary.active{border-bottom-color:var(--accent)}
+  .tab-star{display:inline-block; font-size:.62rem; font-weight:800; text-transform:uppercase;
+    letter-spacing:.04em; background:var(--accent); color:#fff; padding:2px 7px; border-radius:999px;
+    margin-left:7px; vertical-align:middle}
+  .full-badge{display:inline-flex; align-items:center; gap:7px; color:var(--accent); font-weight:800;
+    font-size:.8rem; text-transform:uppercase; letter-spacing:.04em; background:var(--accent-soft);
+    padding:8px 14px; border-radius:999px; margin-bottom:16px}
+  .lite-warn{margin-bottom:14px; padding:11px 14px; background:var(--warm-soft);
+    border-radius:10px; font-size:.9rem; color:var(--ink)}
+  .claude-cta{margin-top:18px; padding:18px; background:var(--ink); border-radius:12px}
+  .claude-cta p{margin:0 0 12px; color:#cdd6dd; font-size:.92rem}
+  .claude-cta .btn{background:#fff; color:var(--ink); border-color:#fff}
+  .claude-cta .btn:hover{background:#e9edf0; border-color:#e9edf0}
   @media(max-width:720px){
-    .ba,.grid3,.steps{grid-template-columns:1fr}
+    .ba,.grid3,.steps,.steps2,.chat-pair{grid-template-columns:1fr}
     section{padding:56px 0}
   }
 </style>
@@ -81,12 +145,12 @@
 <header class="hero">
   <div class="wrap">
     <p class="eyebrow">Liderança humanista · open source</p>
-    <h1>O melhor princípio de liderança chega tarde demais.</h1>
+    <h1>Seu assistente percebe o momento difícil — e sugere a resposta mais humana.</h1>
     <p class="lead">
-      Liderança não acontece no treinamento — acontece no e-mail que você está prestes a
-      enviar, no feedback de daqui a cinco minutos, no comunicado da decisão difícil.
-      O <strong>Leadership MCP</strong> entrega o princípio certo <em>no instante em que você lidera</em>,
-      dentro do assistente de IA que você já usa.
+      Você não precisa lembrar de aplicar nada. Quando surge o e-mail tenso, o feedback duro, a decisão
+      que mexe com gente — no que você vai escrever <em>ou no que ele acabou de ler na sua caixa de
+      entrada</em> — o <strong>Leadership MCP</strong> entra, discreto, e molda a resposta por
+      princípios de liderança humanista comprovados. Sempre uma hipótese; <em>você decide</em>.
     </p>
     <div class="btns">
       <a class="btn" href="#demo">Ver a diferença na prática</a>
@@ -108,7 +172,7 @@
       A empresa investe em programas, workshops, off-sites. A boa intenção existe. Mas na hora da
       pressão — com pressa, sob tensão — a gente cai no instinto ou no "corporativês", e a forma
       escala o conflito em vez de resolvê-lo. O conhecimento estava lá; <span class="kicker">faltou
-      chegar no momento certo</span>.
+      chegar no momento certo</span> — e faltou algo perceber que o momento era aquele.
     </p>
   </div>
 </section>
@@ -159,23 +223,72 @@
       <div class="card"><h3>Escrever o e-mail crítico</h3><p>Começar pelo fato, oferecer um caminho, terminar num próximo passo.</p></div>
       <div class="card"><h3>Comunicar uma mudança</h3><p>Responder "e eu nisso?", nomear a perda, dar próximos passos concretos.</p></div>
       <div class="card"><h3>A conversa que você adia</h3><p>Reconhecer o adiamento e ir direto, com uma estrutura simples e humana.</p></div>
+      <div class="card"><h3>Reconhecer para valer</h3><p>Comportamento, impacto e sentimento — não um elogio genérico que não gruda.</p></div>
+      <div class="card"><h3>Pedir ajuda sem sobrecarregar</h3><p>Ser claro no pedido e no porquê, respeitando o tempo e a carga do outro.</p></div>
+      <div class="card"><h3>Falar com fornecedor ou cliente tenso</h3><p>Firmeza no combinado sem romper a relação: fato, caminho, próximo passo.</p></div>
     </div>
   </div>
 </section>
 
 <section id="como">
   <div class="wrap">
-    <p class="eyebrow">Como funciona</p>
-    <h2>Discreto por design. Você no controle.</h2>
+    <p class="eyebrow">O diferencial</p>
+    <h2>Ele percebe o momento. Você decide.</h2>
+    <p class="lead">
+      O grande diferencial: <strong>ele não espera você pedir</strong>. Quando há tensão em algo que já
+      está no seu fluxo — um e-mail que ele acabou de ler pra você, uma conversa que você colou — ele
+      percebe que ali há um momento de valor e oferece a base. E quando é <strong>você</strong> quem
+      traz a situação, funciona igual.
+    </p>
+
+    <div class="chat-pair">
+      <div class="chat-col">
+        <p class="chat-label">Ele percebe no seu fluxo</p>
+        <div class="chat">
+          <div class="bubble user">Dá uma olhada na minha caixa e me ajuda a responder o e-mail do Rafael.</div>
+          <div class="bubble bot">
+            Li o e-mail do Rafael — o tom está tenso, soa como uma cobrança pela entrega. Antes de
+            escrever, posso consultar o <strong>Leadership MCP</strong> pra você responder sem escalar.
+            Ou respondo direto?
+          </div>
+          <div class="bubble user">Pode consultar.</div>
+          <div class="bubble bot">
+            <span class="chip">✳ consultando Leadership MCP</span><br>
+            Vou reconhecer o ponto dele, separar o fato da acusação e propor um próximo passo — em vez de
+            entrar na defensiva.
+          </div>
+        </div>
+      </div>
+      <div class="chat-col">
+        <p class="chat-label">Ou você traz a situação</p>
+        <div class="chat">
+          <div class="bubble user">Como respondo esse e-mail agressivo do colega?</div>
+          <div class="bubble bot">
+            Percebi que envolve uma conversa difícil. Posso consultar o <strong>Leadership MCP</strong> —
+            base de liderança humanista — e já escrever com base nisso. Ou prefere que eu responda direto?
+          </div>
+          <div class="bubble user">Pode consultar.</div>
+          <div class="bubble bot">
+            <span class="chip">✳ consultando Leadership MCP</span><br>
+            Começo pelo fato, assumo boa intenção e fecho com um próximo passo concreto — é o que desarma
+            um e-mail tenso.
+          </div>
+        </div>
+      </div>
+    </div>
+
     <div class="steps">
-      <div class="step"><h3>Você pede ajuda</h3><p>"Como respondo esse e-mail agressivo do colega?" — no seu assistente de IA de sempre.</p></div>
-      <div class="step"><h3>Ele pergunta antes</h3><p>Percebe que é uma situação relacional e oferece consultar a base de liderança humanista. Se você não quiser, ele responde direto.</p></div>
+      <div class="step"><h3>Ele percebe — ou você traz</h3><p>No que você vai escrever, ou no que ele acabou de ler pra você (um e-mail, uma conversa), ele reconhece a situação relacional.</p></div>
+      <div class="step"><h3>Pergunta antes de agir</h3><p>Oferece consultar a base de liderança humanista. Se você não quiser, responde direto — sem insistir.</p></div>
       <div class="step"><h3>A resposta já vem moldada</h3><p>Fato em vez de acusação, próximo passo em vez de porta fechada — com impacto humano e econômico comprovado.</p></div>
     </div>
     <p class="lead" style="margin-top:28px">
       Nada das suas conversas sai da sua máquina — a ferramenta só lê a base pública de conhecimento.
       Roda sobre o padrão aberto <a href="https://modelcontextprotocol.io">MCP</a>.
     </p>
+    <div class="btns">
+      <a class="btn" href="#instalar">Instalar em 2 passos</a>
+    </div>
   </div>
 </section>
 
@@ -205,19 +318,57 @@
         todo dia, em cada interação. Base personalizável (white-label), rollout sem fricção.
       </p>
       <div class="btns">
-        <a class="btn" href="mailto:mario@campello.me?subject=Leadership%20MCP%20—%20parceria">Conversar sobre parceria</a>
+        <a class="btn" href="https://wa.me/5511992630805?text=Ol%C3%A1%21%20Encontrei%20o%20Leadership%20MCP%20e%20quero%20instalar%20na%20minha%20empresa%20ou%20oferecer%20aos%20meus%20clientes.%20Vamos%20conversar%3F" target="_blank" rel="noopener">Conversar sobre parceria</a>
       </div>
     </div>
   </div>
 </section>
 
-<section id="comecar">
+<section id="instalar">
   <div class="wrap">
-    <p class="eyebrow">Começar</p>
-    <h2>Open source e gratuito.</h2>
+    <p class="eyebrow">Instalar</p>
+    <h2>Pronto em 2 passos — grátis.</h2>
     <p class="lead">
-      Instalável no Claude e em qualquer cliente compatível com MCP. Contribua com a base viva de
-      conhecimento — sem precisar escrever código.
+      O <strong>prompt</strong> funciona em qualquer assistente (Claude, ChatGPT, Gemini, Grok). A
+      <strong>base ao vivo</strong> conecta hoje no <strong>Claude Desktop</strong> — só precisa do
+      <a href="https://nodejs.org">Node.js 18+</a>.
+    </p>
+    <div class="steps steps2">
+      <div class="step">
+        <h3>Copie e cole o prompt de sistema</h3>
+        <p>
+          É ele que ensina o assistente a <em>perceber</em> a situação relacional e oferecer a consulta
+          — sem impor. Clique, copie, e a gente mostra onde colar no seu assistente.
+        </p>
+        <button class="btn" type="button" onclick="copyPromptAndOpen()" style="margin-top:10px">Copiar o prompt de sistema</button>
+      </div>
+      <div class="step">
+        <h3>Registre o servidor MCP</h3>
+        <p>
+          Em <strong>Configurações → Desenvolvedor → Editar Config</strong>, adicione o bloco abaixo
+          e reinicie o Claude:
+        </p>
+        <pre class="code"><code>{
+  "mcpServers": {
+    "leadership": {
+      "command": "npx",
+      "args": ["-y", "leadership-mcp"]
+    }
+  }
+}</code></pre>
+      </div>
+    </div>
+    <p class="note">
+      💡 É um servidor <strong>local</strong> — roda na sua máquina via <code>npx</code>, não sai nada
+      das suas conversas. Por isso ele <strong>não</strong> entra pela janela de "adicionar conector"
+      (que é só para servidores remotos com URL), e por isso funciona no Claude
+      <strong>Desktop</strong>, não no web/mobile.
+    </p>
+    <p class="lead" style="margin-top:24px">
+      Pronto. Peça algo como <em>"como respondo esse e-mail agressivo do colega?"</em> e veja a
+      orientação moldar a resposta. Passo a passo completo, outros clientes MCP e uso em empresa
+      (white-label) no
+      <a href="https://github.com/mcampello/leadership-mcp#-installation-claude-desktop">README</a>.
     </p>
     <div class="btns">
       <a class="btn" href="https://github.com/mcampello/leadership-mcp">Ver no GitHub</a>
@@ -225,6 +376,156 @@
     </div>
   </div>
 </section>
+
+<!-- Modal: onde colar o prompt, por assistente -->
+<div class="modal-overlay" id="promptModal" role="dialog" aria-modal="true" aria-labelledby="promptModalTitle">
+  <div class="modal">
+    <button class="modal-close" type="button" aria-label="Fechar" onclick="closePromptModal()">×</button>
+    <p class="copied-flag">✓ Prompt copiado</p>
+    <h3 id="promptModalTitle">Agora é só colar nas instruções do seu assistente</h3>
+    <p class="sub">Escolha onde você usa IA e siga os passos. Cola uma vez — vale para todas as conversas.</p>
+    <div class="tabs" role="tablist">
+      <button class="tab tab-primary active" type="button" onclick="showTab(event,'tab-claude')">Claude<span class="tab-star">recomendado</span></button>
+      <button class="tab" type="button" onclick="showTab(event,'tab-chatgpt')">ChatGPT</button>
+      <button class="tab" type="button" onclick="showTab(event,'tab-gemini')">Gemini</button>
+      <button class="tab" type="button" onclick="showTab(event,'tab-grok')">Grok</button>
+      <button class="tab" type="button" onclick="showTab(event,'tab-copilot')">Copilot</button>
+    </div>
+    <div class="tab-panel active" id="tab-claude">
+      <div class="full-badge">✓ Experiência completa · o único com a base ao vivo</div>
+      <ol>
+        <li>Abra o <strong>Claude</strong> (claude.ai ou o app).</li>
+        <li>Vá em <strong>Configurações → Geral</strong>.</li>
+        <li>Em <strong>Instruções para o Claude</strong>, cole o prompt (<strong>Cmd/Ctrl + V</strong>) e salve.</li>
+      </ol>
+      <div class="hint">Para a orientação <strong>ao vivo</strong> (a base sendo consultada de verdade), instale também o servidor MCP — os <a href="#instalar" onclick="closePromptModal()">2 passos acima</a>. É o que dá a experiência completa.</div>
+    </div>
+    <div class="tab-panel" id="tab-chatgpt">
+      <div class="lite-warn">⚠ <strong>Modo leve</strong> — a base ao vivo e as atualizações <strong>não</strong> chegam aqui. O assistente percebe o momento, mas responde com o conhecimento próprio dele.</div>
+      <ol>
+        <li>Perfil → <strong>Personalizar o ChatGPT</strong> (ou <strong>Configurações → Personalização → Instruções personalizadas</strong>).</li>
+        <li>Cole o prompt. Se estourar o limite do campo, crie um <strong>GPT personalizado</strong> (＋ → Criar um GPT → <strong>Configurar → Instruções</strong>) e cole lá.</li>
+      </ol>
+      <div class="claude-cta">
+        <p><strong>Quer a experiência completa</strong>, com a base viva e as atualizações? Baixe e teste o Claude:</p>
+        <a class="btn" href="https://claude.ai/referral/3TMoJ9wAEw?s=cowork&amp;v=apps" target="_blank" rel="noopener">Baixar e testar o Claude</a>
+      </div>
+    </div>
+    <div class="tab-panel" id="tab-gemini">
+      <div class="lite-warn">⚠ <strong>Modo leve</strong> — a base ao vivo e as atualizações <strong>não</strong> chegam aqui. O assistente percebe o momento, mas responde com o conhecimento próprio dele.</div>
+      <ol>
+        <li>Abra o <strong>Gemini</strong> (gemini.google.com) com uma Conta Google pessoal.</li>
+        <li><strong>Configurações e ajuda → Inteligência pessoal → Instruções para o Gemini</strong>.</li>
+        <li>Clique em <strong>Adicionar</strong>, cole o prompt e salve.</li>
+      </ol>
+      <div class="claude-cta">
+        <p><strong>Quer a experiência completa</strong>, com a base viva e as atualizações? Baixe e teste o Claude:</p>
+        <a class="btn" href="https://claude.ai/referral/3TMoJ9wAEw?s=cowork&amp;v=apps" target="_blank" rel="noopener">Baixar e testar o Claude</a>
+      </div>
+    </div>
+    <div class="tab-panel" id="tab-grok">
+      <div class="lite-warn">⚠ <strong>Modo leve</strong> — a base ao vivo e as atualizações <strong>não</strong> chegam aqui. O assistente percebe o momento, mas responde com o conhecimento próprio dele.</div>
+      <ol>
+        <li>Abra o <strong>Grok</strong> (grok.com) e clique no seu perfil / menu no canto.</li>
+        <li><strong>Configurações → Personalizar o Grok</strong> (Custom Instructions).</li>
+        <li>Cole o prompt no campo de instruções e salve.</li>
+      </ol>
+      <div class="claude-cta">
+        <p><strong>Quer a experiência completa</strong>, com a base viva e as atualizações? Baixe e teste o Claude:</p>
+        <a class="btn" href="https://claude.ai/referral/3TMoJ9wAEw?s=cowork&amp;v=apps" target="_blank" rel="noopener">Baixar e testar o Claude</a>
+      </div>
+    </div>
+    <div class="tab-panel" id="tab-copilot">
+      <div class="lite-warn">⚠ <strong>Modo leve</strong> — a base ao vivo e as atualizações <strong>não</strong> chegam aqui. O assistente percebe o momento, mas responde com o conhecimento próprio dele.</div>
+      <ol>
+        <li>No <strong>Copilot</strong>, canto superior direito (<strong>Copilot chats and more</strong>) → <strong>Configurações</strong>.</li>
+        <li><strong>Personalização → Instruções personalizadas → Editar instruções</strong>.</li>
+        <li>Cole o prompt e clique em <strong>Salvar</strong>.</li>
+      </ol>
+      <div class="claude-cta">
+        <p><strong>Quer a experiência completa</strong>, com a base viva e as atualizações? Baixe e teste o Claude:</p>
+        <a class="btn" href="https://claude.ai/referral/3TMoJ9wAEw?s=cowork&amp;v=apps" target="_blank" rel="noopener">Baixar e testar o Claude</a>
+      </div>
+    </div>
+    <div class="btns" style="margin-top:22px">
+      <button class="btn ghost" type="button" onclick="copyPromptText()">Copiar de novo</button>
+    </div>
+  </div>
+</div>
+
+<!-- Fonte do prompt: mantenha em sincronia com prompt-sistema.md (seção ## Prompt) -->
+<script type="text/plain" id="sysPromptText">Você é um assistente de trabalho. Responda normalmente à tarefa solicitada.
+
+Mas antes de responder, classifique silenciosamente a tarefa usando este critério:
+
+SE a tarefa envolve PRODUZIR ou ESTRUTURAR algo (email, mensagem, roteiro, comunicado, post, documento, apresentação) PARA ou SOBRE uma pessoa ou grupo — isso é um gatilho relacional. Detecte o tipo pelo destinatário ou contexto:
+
+1. CONFLITO — destinatário ou contexto envolve tensão, desentendimento, acusação, agressividade, silêncio hostil, defesa de posição
+2. DECISAO_IMPACTO — comunicar ao time ou liderança algo que muda rotina, cancela projeto, impõe esforço extra
+3. FEEDBACK — reconhecer, agradecer formalmente, corrigir comportamento, responder avaliação recebida
+4. RELACIONAMENTO_INTERNO — interagir com gestor, colega ou diretoria para pedir algo, apresentar algo ou pedir ajuda
+5. INTERACAO_EXTERNA — interagir com fornecedor, parceiro, cliente ou lead
+
+SE a tarefa é puramente técnica, conceitual ou operacional SEM destinatário humano específico: não é gatilho — responda direto, sem perguntar nada.
+
+O gatilho pode NÃO estar nas palavras do pedido, e sim no CONTEXTO que você tem em mãos. Se você leu — ou o usuário te deu acesso a — e-mails, mensagens, threads ou documentos (por conector, ferramenta ou colados no chat) e o próximo passo é RESPONDER, encaminhar ou reagir a algo com carga relacional (um e-mail tenso, uma cobrança, um desabafo, um pedido delicado), classifique o gatilho pelo CONTEÚDO e pelo TOM daquilo — mesmo que o pedido tenha vindo de forma neutra ("responde esse", "me ajuda a responder", "prepara uma resposta"). Só LER ou LISTAR a caixa de entrada NÃO é gatilho; PRODUZIR a resposta a um item com carga relacional É.
+
+Exemplos de gatilho implícito:
+- "escreve um email para o fornecedor que está atrasando" → INTERACAO_EXTERNA
+- "como respondo o email agressivo do colega" → CONFLITO
+- "roteiro para anunciar cancelamento do projeto para o time" → DECISAO_IMPACTO
+- "texto de reconhecimento para o time" → FEEDBACK
+- "mensagem para pedir ajuda a um colega sem sobrecarregar" → RELACIONAMENTO_INTERNO
+- "como estruturo uma mensagem para pedir ajuda a um colega" → RELACIONAMENTO_INTERNO
+- "preciso de um roteiro para uma reunião onde vou anunciar algo ao time" → DECISAO_IMPACTO
+- (leu a caixa de entrada) "prepara uma resposta para esse e-mail" — e o e-mail lido tem tom nervoso/acusatório → CONFLITO (gatilho vindo do conteúdo, não do pedido)
+- (thread colada no chat) "me ajuda a responder isso aqui" — e a mensagem é uma cobrança do chefe → RELACIONAMENTO_INTERNO / conforme o tom
+
+Exemplos que NÃO são gatilho:
+- "como faço um relatório de desempenho do time" → operacional, sem destinatário
+- "planilha para controlar tarefas do time" → operacional
+- "quem aprova esse tipo de compra" → informação, sem dimensão relacional
+
+Quando detectar um gatilho, NÃO responda a tarefa ainda. Primeiro, pare e ofereça a escolha:
+
+"Percebi que isso envolve [a relação/situação em poucas palavras, nomeando o que você viu no conteúdo quando for o caso: ex. 'um cliente', 'uma conversa difícil com o time', 'esse e-mail tem um tom tenso']. Posso consultar o Leadership MCP — uma base sobre liderança humanista, com orientações comprovadamente eficazes sobre como conduzir esse tipo de situação — e escrever já com base nisso. Ou prefere que eu responda direto?"
+
+- Se a pessoa quiser consultar: chame a ferramenta buscar_orientacao descrevendo a situação em uma frase, e use a orientação retornada para moldar a resposta desde o início (não como adendo no final). Em uma linha, diga qual princípio você aplicou.
+- Se a pessoa quiser direto: responda normalmente, sem insistir.
+
+Regras:
+- Faça a pergunta uma única vez, ANTES de produzir a resposta — nunca escreva a versão "crua" e ofereça a consulta depois.
+- A orientação do MCP é sempre uma hipótese de ação, nunca uma prescrição.
+- Não repita a oferta se a pessoa não demonstrar interesse.</script>
+
+<script>
+  function getPromptText(){ return document.getElementById('sysPromptText').textContent.trim(); }
+  function fallbackCopy(t){
+    var ta=document.createElement('textarea'); ta.value=t;
+    ta.style.position='fixed'; ta.style.opacity='0'; document.body.appendChild(ta);
+    ta.focus(); ta.select();
+    try{ document.execCommand('copy'); }catch(e){}
+    document.body.removeChild(ta);
+  }
+  function copyPromptText(){
+    var t=getPromptText();
+    if(navigator.clipboard && navigator.clipboard.writeText){
+      navigator.clipboard.writeText(t).catch(function(){ fallbackCopy(t); });
+    } else { fallbackCopy(t); }
+  }
+  function openPromptModal(){ document.getElementById('promptModal').classList.add('open'); document.body.style.overflow='hidden'; }
+  function closePromptModal(){ document.getElementById('promptModal').classList.remove('open'); document.body.style.overflow=''; }
+  function copyPromptAndOpen(){ copyPromptText(); openPromptModal(); }
+  function showTab(e,id){
+    var m=e.target.closest('.modal');
+    m.querySelectorAll('.tab').forEach(function(t){ t.classList.remove('active'); });
+    m.querySelectorAll('.tab-panel').forEach(function(t){ t.classList.remove('active'); });
+    e.target.classList.add('active');
+    document.getElementById(id).classList.add('active');
+  }
+  document.addEventListener('keydown', function(e){ if(e.key==='Escape') closePromptModal(); });
+  document.getElementById('promptModal').addEventListener('click', function(e){ if(e.target===this) closePromptModal(); });
+</script>
 
 <footer>
   <div class="wrap">
