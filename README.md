@@ -1,13 +1,16 @@
 <div align="center">
 
+[🇧🇷 Português](README.pt-BR.md) · **🇬🇧 English**
+
 # Leadership MCP
 
-### Liderança humanista entregue ao seu assistente de IA — no momento exato em que você lidera.
+### Humanist leadership delivered to your AI assistant — at the exact moment you lead.
 
-Não nos treinamentos. Na hora de escrever o e-mail difícil, dar o feedback, comunicar a decisão.
+Not in the training room. When you're about to send the hard email, give the feedback, announce the tough call.
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE)
 [![npm](https://img.shields.io/npm/v/leadership-mcp.svg)](https://www.npmjs.com/package/leadership-mcp)
+[![CI](https://github.com/mcampello/leadership-mcp/actions/workflows/ci.yml/badge.svg)](https://github.com/mcampello/leadership-mcp/actions/workflows/ci.yml)
 [![MCP compatible](https://img.shields.io/badge/MCP-compatible-blue)](https://modelcontextprotocol.io)
 [![Node >=18](https://img.shields.io/badge/Node-%3E%3D18-brightgreen)](https://nodejs.org)
 
@@ -15,164 +18,163 @@ Não nos treinamentos. Na hora de escrever o e-mail difícil, dar o feedback, co
 
 ---
 
-O **Leadership MCP** é uma ferramenta open source e gratuita que conecta uma base viva de
-**liderança humanista** ao Claude (ou a qualquer cliente compatível com
-[MCP](https://modelcontextprotocol.io)). Quando você pede ajuda para escrever um e-mail tenso,
-dar um feedback, comunicar uma decisão ou conduzir um conflito, o assistente **para, pergunta se
-você quer**, e — se você quiser — molda a resposta a partir de princípios de liderança com
-impacto humano e econômico comprovado.
+**Leadership MCP** is a free, open-source tool that connects a living knowledge base of
+**humanist leadership** to Claude (or any [MCP](https://modelcontextprotocol.io)-compatible
+client). When you ask for help writing a tense email, giving feedback, announcing a decision or
+handling a conflict, the assistant **pauses, asks if you want it**, and — if you do — shapes the
+answer from leadership principles with proven human and economic impact.
 
-A orientação é sempre **uma hipótese, nunca uma prescrição**. Você decide se quer ouvir.
-
----
-
-## 🎯 O problema
-
-Liderança não acontece nos treinamentos. Acontece nas interações: no e-mail que você está prestes
-a enviar, no feedback que vai dar daqui a cinco minutos, no comunicado de uma decisão difícil.
-
-E é justamente nesse momento — sob pressão, com pressa — que o melhor princípio de liderança fica
-inacessível. A gente cai no instinto ou no "corporativês". A boa intenção existe, mas a forma
-escala o conflito em vez de resolvê-lo.
-
-O Leadership MCP coloca o princípio certo **no instante certo**, dentro da ferramenta que você já
-usa para escrever.
+The guidance is always **a hypothesis, never a prescription**. You decide whether to listen.
 
 ---
 
-## ⚙️ Como funciona na prática
+## 🎯 The problem
 
-A inteligência mora num detalhe de comportamento: o assistente **não despeja teoria**. Ele detecta
-que a tarefa é relacional, pausa, e oferece a escolha — e só então molda a resposta.
+Leadership doesn't happen in the training room. It happens in the interactions: the email you're
+about to send, the feedback you'll give in five minutes, the announcement of a hard decision.
 
-> **Você:** preciso responder esse e-mail de um colega que está me acusando de atrasar o projeto dele.
->
-> **Claude:** Percebi que isso envolve uma conversa difícil com um colega. Posso consultar o
-> Leadership MCP — uma base sobre liderança humanista, com orientações comprovadamente eficazes
-> sobre como conduzir esse tipo de situação — e escrever já com base nisso. Ou prefere que eu
-> responda direto?
->
-> **Você:** pode consultar.
->
-> **Claude:** *(consulta `buscar_orientacao`)* Vou começar pelo fato em vez da defesa, assumir
-> boa intenção e fechar com um próximo passo concreto — é o que reduz a escalada num e-mail tenso.
-> Aqui está o rascunho: …
+And it's exactly in that moment — under pressure, in a hurry — that the best leadership principle
+becomes unreachable. We fall back on instinct or on corporate-speak. The good intention is there,
+but the delivery escalates the conflict instead of resolving it.
 
-A consulta **molda a resposta desde o início** — não é um adendo no final. E a pergunta é feita
-uma única vez: se você não quiser, ele responde direto, sem insistir.
+Leadership training evaporates in two weeks. Leadership MCP puts the right principle **at the right
+instant**, inside the tool you already use to write.
 
 ---
 
-## 🔄 O que muda
+## ⚙️ How it works in practice
 
-| Resposta "crua" (instinto sob pressão) | Resposta moldada pela base |
+The intelligence lives in one behavioral detail: the assistant **doesn't dump theory**. It detects
+that the task is relational, pauses, and offers a choice — and only then shapes the answer.
+
+> **You:** I need to reply to an email from a colleague who's accusing me of delaying his project.
+>
+> **Claude:** I noticed this involves a difficult conversation with a colleague. I can consult
+> Leadership MCP — a base on humanist leadership with proven guidance on how to handle this kind of
+> situation — and write with that in mind. Or would you rather I just answer directly?
+>
+> **You:** go ahead and consult it.
+>
+> **Claude:** *(consults `buscar_orientacao`)* I'll start with the fact instead of the defense,
+> assume good intent, and close with a concrete next step — that's what de-escalates a tense email.
+> Here's the draft: …
+
+The consultation **shapes the answer from the start** — it's not an afterthought. And the question
+is asked only once: if you decline, it answers directly, without insisting.
+
+---
+
+## 🔄 What changes
+
+| "Raw" reply (instinct under pressure) | Reply shaped by the base |
 | --- | --- |
-| "Você não entregou de novo." | "A entrega combinada para sexta não chegou — imagino que tenha surgido algo." |
-| Acusa o caráter | Descreve o fato e o comportamento |
-| Termina no problema | Termina num próximo passo: "consegue me dar uma posição até amanhã às 12h?" |
-| Fecha a porta | Abre a porta para a outra pessoa explicar |
+| "You didn't deliver again." | "The delivery we agreed on for Friday didn't arrive — I imagine something came up." |
+| Attacks character | Describes the fact and the behavior |
+| Ends on the problem | Ends on a next step: "can you give me an update by noon tomorrow?" |
+| Closes the door | Opens the door for the other person to explain |
 
-A base é organizada em quatro camadas encadeadas — **gatilho → filtros → ação → resultado** — que
-o servidor monta em uma orientação consolidada a partir da situação que você descreve:
+The base is organized in four chained layers — **trigger → filters → action → outcome** — that the
+server assembles into a single, consolidated piece of guidance from the situation you describe:
 
-1. **Gatilho** — a natureza relacional da situação (conflito, feedback, decisão com impacto,
-   relacionamento interno, interação externa).
-2. **Filtros** — os pilares da liderança humanista (escuta ativa, reconhecimento, cultura de serviço).
-3. **Ação** — uma hipótese de comportamento concreta para aquela situação.
-4. **Resultado** — o efeito esperado (engajamento, confiança, cultura inclusiva).
-
----
-
-## 👥 Para quem é
-
-- **Líderes e gestores** que conduzem times e tomam decisões que afetam pessoas.
-- **Fundadores e empreendedores** construindo a cultura desde o começo.
-- **Líderes técnicos, PMs e coordenadores** que lideram sem necessariamente ter "chefe" no título.
-- **RH e pessoas de cultura** que querem uma linguagem comum de liderança.
-- **Qualquer pessoa** que escreve mensagens difíceis no trabalho.
-
-Não exige cargo de chefia. Exige conduzir relações — e querer conduzi-las melhor.
+1. **Trigger** — the relational nature of the situation (conflict, feedback, high-impact decision,
+   internal relationship, external interaction).
+2. **Filters** — the pillars of humanist leadership (active listening, recognition, culture of service).
+3. **Action** — a concrete behavioral hypothesis for that situation.
+4. **Outcome** — the expected effect (engagement, trust, inclusive culture).
 
 ---
 
-## ✅ O que você vai realizar
+## 👥 Who it's for
 
-- **Conduzir um conflito sem escalá-lo** — separar fato de acusação, baixar a temperatura.
-- **Dar feedback que constrói** em vez de ferir — e receber feedback sem se fechar.
-- **Comunicar uma decisão difícil** (corte, mudança, esforço extra) preservando a confiança do time.
-- **Escrever o e-mail crítico** que registra o que precisa sem incendiar a relação.
-- **Reconhecer de verdade** — comportamento, impacto e sentimento, não elogio genérico.
+- **Leaders and managers** who run teams and make decisions that affect people.
+- **Founders and entrepreneurs** building culture from day one.
+- **Tech leads, PMs and coordinators** who lead without necessarily having "manager" in their title.
+- **HR and people/culture** teams who want a common leadership language.
+- **Anyone** who writes difficult messages at work.
 
-O objetivo final não é "responder melhor um e-mail". É construir, interação por interação,
-**engajamento, confiança e uma cultura inclusiva** — os resultados que a base persegue.
-
----
-
-## 🏢 A vantagem em escala numa empresa
-
-O ganho de uma pessoa usando isso é real. O ganho de **um time inteiro** usando a **mesma base
-viva** é de outra ordem:
-
-- **Uma linguagem de liderança comum.** Todo mundo conduz conflito, feedback e decisões a partir
-  dos mesmos princípios. A qualidade da liderança para de depender de quem por acaso é o gestor de
-  cada um.
-- **Uma base central e viva.** Atualizou a forma como a empresa lida com mudanças? Um `git push`
-  no repositório e **todos recebem a versão nova na próxima conversa** — sem reinstalar, sem
-  retreinar, sem reenviar comunicado.
-- **Personalizável para a sua cultura.** Aponte o MCP para um fork com os valores e a linguagem da
-  sua empresa (via `LEADERSHIP_MCP_REPO` / `LEADERSHIP_MCP_REF`). A orientação passa a falar a
-  voz da casa.
-- **Privado por design.** Nada das conversas sai da máquina de cada pessoa — o servidor só lê os
-  arquivos `.md` públicos do repositório. Cultura distribuída sem expor dados.
-
-Em vez de um treinamento que evapora em duas semanas, a liderança humanista vira **infraestrutura**:
-está presente em cada interação, igual para todos, e melhora com um commit.
+No management title required. It takes leading relationships — and wanting to lead them better.
 
 ---
 
-## 📈 As evidências
+## ✅ What you'll accomplish
 
-A premissa é simples e radical: **as pessoas não são recursos a serviço do negócio; o negócio
-existe a serviço das pessoas.** E não é teoria sem lastro:
+- **Handle a conflict without escalating it** — separate fact from accusation, lower the temperature.
+- **Give feedback that builds** instead of hurts — and receive feedback without shutting down.
+- **Announce a hard decision** (a cut, a change, extra effort) while preserving the team's trust.
+- **Write the critical email** that records what's needed without setting the relationship on fire.
+- **Recognize for real** — behavior, impact and feeling, not generic praise.
 
-- Na **Barry-Wehmiller**, levada ao extremo por Bob Chapman, a empresa cresceu de **US$ 20M para
-  US$ 3,6B** em cerca de 50 anos — caso documentado pela **Harvard Business School (2016)** e
-  ensinado em mais de **70 escolas**.
-- *"Medimos o sucesso pela forma como tocamos a vida das pessoas."* — Bob Chapman,
+The end goal isn't "reply to an email better." It's building, interaction by interaction,
+**engagement, trust and an inclusive culture** — the outcomes the base is after.
+
+---
+
+## 🏢 The advantage at company scale
+
+One person using this creates real gains. An **entire team** using the **same living base** is a
+different order of magnitude:
+
+- **A common leadership language.** Everyone handles conflict, feedback and decisions from the same
+  principles. Leadership quality stops depending on who happens to be whose manager.
+- **A central, living base.** Updated how the company handles change? One `git push` and **everyone
+  gets the new version in their next conversation** — no reinstall, no retraining, no memo.
+- **Customizable to your culture.** Point the MCP to a fork with your company's values and language
+  (via `LEADERSHIP_MCP_REPO` / `LEADERSHIP_MCP_REF`). The guidance now speaks the house voice.
+- **Private by design.** Nothing from the conversations leaves each person's machine — the server
+  only reads the public `.md` files from the repository. Distributed culture without exposing data.
+
+Instead of training that evaporates in two weeks, humanist leadership becomes **infrastructure**:
+present in every interaction, the same for everyone, and improving with a commit.
+
+> **Run a leadership training company or consultancy?** Leadership MCP can become the continuous
+> reinforcement product you offer clients — your methodology and brand, delivered at the moment the
+> leader applies it. See [how to fork the base](#-technical-details) or get in touch.
+
+---
+
+## 📈 The evidence
+
+The premise is simple and radical: **people are not resources in service of the business; the
+business exists in service of people.** And it's not theory without grounding:
+
+- At **Barry-Wehmiller**, taken to the extreme by Bob Chapman, the company grew from **$20M to
+  $3.6B** over roughly 50 years — a case documented by **Harvard Business School (2016)** and
+  taught at over **70 schools**.
+- *"We measure success by the way we touch the lives of people."* — Bob Chapman,
   *Everybody Matters* (2015, rev. 2025).
-- **Simon Sinek**, em *Leaders Eat Last*, mostra por que equipes em que as pessoas se sentem
-  seguras e cuidadas performam melhor — o líder que "come por último" constrói confiança.
+- **Simon Sinek**, in *Leaders Eat Last*, shows why teams where people feel safe and cared for
+  perform better — the leader who "eats last" builds trust.
 
-O Leadership MCP destila esses princípios e os torna acessíveis no momento exato da interação —
-porque é aí que a liderança acontece. As fontes completas estão [no fim deste README](#inspirações).
+Leadership MCP distills these principles and makes them accessible at the exact moment of the
+interaction — because that's where leadership happens. Full sources are [at the end](#inspirations).
 
 ---
 
-## 🚀 Instalação (Claude Desktop)
+## 🚀 Installation (Claude Desktop)
 
-São dois passos: **(1)** colar o prompt de sistema e **(2)** registrar o servidor MCP.
+Two steps: **(1)** paste the system prompt and **(2)** register the MCP server.
 
-### 1. Cole o prompt de sistema
+### 1. Paste the system prompt
 
-Abra [`prompt-sistema.md`](prompt-sistema.md), copie o conteúdo da seção **Prompt** e cole nas
-instruções personalizadas do Claude (**Settings → Profile / Custom Instructions**). Ele ensina o
-assistente a detectar situações relacionais e a oferecer — sem impor — a consulta.
+Open [`prompt-sistema.md`](prompt-sistema.md), copy the content of the **Prompt** section and paste
+it into Claude's custom instructions (**Settings → Profile / Custom Instructions**). It teaches the
+assistant to detect relational situations and to offer — without imposing — the consultation.
 
-### 2. Registre o servidor MCP
+### 2. Register the MCP server
 
-> ⚠️ **Atenção:** este é um servidor MCP **local** (roda na sua máquina via `npx`). Ele **não**
-> se instala pela janela _"Adicionar conector personalizado"_ do Claude — aquela é só para
-> servidores **remotos** com URL `https://`. A instalação correta é editar o arquivo de
-> configuração abaixo. (Por isso funciona no Claude **Desktop**, não no web/celular.)
+> ⚠️ **Note:** this is a **local** MCP server (it runs on your machine via `npx`). It is **not**
+> installed through Claude's _"Add custom connector"_ window — that's only for **remote** servers
+> with an `https://` URL. The correct install is to edit the config file below. (That's why it works
+> on Claude **Desktop**, not web/mobile.)
 
-Edite o arquivo de configuração do Claude Desktop:
+Edit the Claude Desktop config file:
 
 - **macOS:** `~/Library/Application Support/Claude/claude_desktop_config.json`
 - **Windows:** `%APPDATA%\Claude\claude_desktop_config.json`
 
-> 💡 Atalho: **Settings → Developer → Edit Config** abre esse arquivo direto.
+> 💡 Shortcut: **Settings → Developer → Edit Config** opens this file directly.
 
-Adicione o bloco abaixo (se já houver outros `mcpServers`, basta acrescentar a entrada `"leadership"`):
+Add the block below (if you already have other `mcpServers`, just add the `"leadership"` entry):
 
 ```json
 {
@@ -185,105 +187,65 @@ Adicione o bloco abaixo (se já houver outros `mcpServers`, basta acrescentar a 
 }
 ```
 
-Depois **reinicie o Claude Desktop**. Pronto — peça algo como *"como respondo um e-mail agressivo
-de um colega?"* e veja a orientação moldar a resposta.
-
-> **Rodando a partir do código (desenvolvimento):** para usar sua cópia local em vez da versão do
-> npm, aponte para o `index.js`:
->
-> ```json
-> {
->   "mcpServers": {
->     "leadership": {
->       "command": "node",
->       "args": ["/caminho/para/leadership-mcp/server/index.js"]
->     }
->   }
-> }
-> ```
+Then **restart Claude Desktop**. Done — ask something like *"how do I reply to an aggressive email
+from a colleague?"* and watch the guidance shape the response.
 
 ---
 
-## 🛠️ Detalhes técnicos
+## 🛠️ Technical details
 
 <details>
-<summary><strong>As ferramentas MCP expostas ao Claude</strong></summary>
+<summary><strong>The MCP tools exposed to Claude</strong></summary>
 
 <br>
 
-| Ferramenta | O que faz |
+| Tool | What it does |
 | --- | --- |
-| `buscar_orientacao(situacao)` | Classifica o gatilho de uma situação descrita em uma frase e retorna a orientação consolidada (filtros + ação + resultado). |
-| `listar_gatilhos()` | Retorna a taxonomia de gatilhos cobertos, para navegação e transparência. |
+| `buscar_orientacao(situacao)` | Classifies the trigger of a situation described in one sentence and returns the consolidated guidance (filters + action + outcome). |
+| `listar_gatilhos()` | Returns the taxonomy of covered triggers, for navigation and transparency. |
 
 </details>
 
 <details>
-<summary><strong>Como o conhecimento se mantém vivo</strong></summary>
+<summary><strong>How the knowledge stays alive</strong></summary>
 
 <br>
 
-O servidor lê os arquivos `.md` da base **direto do GitHub** a cada sessão, com **fallback para
-uma cópia empacotada** quando não há internet:
+The server reads the base's `.md` files **directly from GitHub** each session, with a **fallback to
+a bundled copy** when there's no internet:
 
-- **Atualizar conteúdo** → basta um `git push`. Os usuários recebem a versão nova na próxima
-  conversa, sem reinstalar nem reiniciar.
-- **Funciona offline** → sem rede, usa a cópia que veio com o pacote. Nunca quebra.
-- **Privado** → nada das conversas sai da sua máquina; só busca os `.md` públicos do repositório.
+- **Update content** → just `git push`. Users get the new version in their next conversation, no
+  reinstall or restart.
+- **Works offline** → without a connection, it uses the copy shipped with the package. Never breaks.
+- **Private** → nothing from the conversations leaves your machine; it only fetches the public `.md`
+  files from the repository.
 
-Configurável por variáveis de ambiente (opcional):
+Configurable via environment variables (optional) — this is also how a **partner or company
+white-labels the base**:
 
-| Variável | Default | Função |
+| Variable | Default | Purpose |
 | --- | --- | --- |
-| `LEADERSHIP_MCP_REPO` | `mcampello/leadership-mcp` | repositório `owner/repo` de onde ler a base |
-| `LEADERSHIP_MCP_REF` | `main` | branch/ref a usar |
+| `LEADERSHIP_MCP_REPO` | `mcampello/leadership-mcp` | the `owner/repo` to read the base from |
+| `LEADERSHIP_MCP_REF` | `main` | the branch/ref to use |
 
 </details>
 
 <details>
-<summary><strong>Estrutura do repositório</strong></summary>
-
-<br>
-
-```
-.
-├── README.md              ← este arquivo
-├── LICENSE                ← MIT
-├── prompt-sistema.md      ← prompt para colar nas instruções do Claude
-├── knowledge/             ← base de conhecimento (fonte canônica)
-│   ├── index.md
-│   ├── gatilhos/          ← 5 situações relacionais
-│   ├── filtros/           ← 3 pilares da liderança humanista
-│   ├── acoes/             ← 7 hipóteses de comportamento
-│   └── resultados/        ← 3 resultados esperados
-└── server/                ← servidor MCP (Node.js)
-    ├── index.js
-    ├── knowledge-loader.js
-    ├── smoke-test.js
-    └── package.json
-```
-
-A pasta `server/knowledge/` é uma **cópia** de `knowledge/` (fallback offline), gerada por
-`npm run sync-knowledge` antes de publicar — a fonte canônica é sempre `knowledge/` na raiz.
-
-</details>
-
-<details>
-<summary><strong>Desenvolvimento</strong></summary>
+<summary><strong>Development</strong></summary>
 
 <br>
 
 ```bash
 cd server
 npm install
-npm run smoke        # valida classificação e montagem da orientação (offline)
-npm run inspect      # abre o MCP Inspector para testar interativamente
+npm run smoke        # validates classification and guidance assembly (offline)
+npm run inspect      # opens the MCP Inspector to test interactively
 ```
 
-Antes de publicar uma versão nova:
+Before publishing a new version:
 
 ```bash
-npm run sync-knowledge   # atualiza a cópia empacotada a partir de ../knowledge
+npm run sync-knowledge   # updates the bundled copy from ../knowledge
 npm publish --access public
 ```
 
@@ -291,68 +253,49 @@ npm publish --access public
 
 ---
 
-## 🤝 Como contribuir
+## 🤝 Contributing
 
-Essa base cresce com gente. Se você tem uma **referência**, um **autor** que admira, uma **ideia
-de conteúdo**, ou viu algo que dá pra melhorar — **entra junto**. Não precisa saber programar:
-existem dois caminhos, e o primeiro é só preencher um formulário.
+This base grows with people. If you have a **reference**, an **author** you admire, a **content
+idea**, or you spotted something to improve — **join in**. No coding required: there are two paths,
+and the first is just filling out a form.
 
-### Caminho 1 — Abrir uma issue (recomendado, sem código)
+- **Path 1 — Open an issue (recommended, no code):** go to
+  **[Issues → New issue](https://github.com/mcampello/leadership-mcp/issues/new/choose)** and pick
+  *Suggest an author/reference*, *Suggest content*, or *Report a problem*.
+- **Path 2 — Edit it yourself:** open any file in [`knowledge/`](knowledge/), click the pencil
+  **✏️ (_Edit this file_)**, make your change and click **Propose changes** — GitHub opens a PR
+  automatically and it gets reviewed.
 
-A forma mais fácil de colaborar. Você descreve o que tem em mente e eu recebo, respondo e levo
-para a base. Em três passos:
-
-1. **Tenha uma conta GitHub** (é gratuita — leva um minuto em [github.com/signup](https://github.com/signup)).
-2. Vá em **[Issues → New issue](https://github.com/mcampello/leadership-mcp/issues/new/choose)** e
-   escolha o que combina com você:
-   - **💡 Sugerir autor ou referência** — um livro, pensador ou ideia que deveria inspirar a base.
-   - **✍️ Sugerir conteúdo** — uma situação de liderança que ainda não está coberta.
-   - **🐞 Reportar um problema** — algo errado, confuso ou desatualizado.
-3. **Preencha e envie.** Pronto — a conversa começa ali mesmo.
-
-> Sem ideia formada, só quer trocar uma figurinha? Abra uma issue mesmo assim — toda contribuição
-> ajuda a base a melhorar aos poucos.
-
-### Caminho 2 — Editar você mesmo (para quem topa mexer no conteúdo)
-
-Dá pra editar qualquer arquivo da base **direto no navegador**, sem instalar nada: abra o arquivo
-em [`knowledge/`](knowledge/), clique no lápis **✏️ (_Edit this file_)**, faça sua mudança e clique
-em **Propose changes** — o GitHub cria uma proposta (PR) automaticamente, e eu reviso.
-
-O passo a passo completo, o formato dos arquivos e a convenção de voz estão no
-**[guia de contribuição (`CONTRIBUTING.md`)](CONTRIBUTING.md)**.
+The full walkthrough, file format and voice convention are in the
+**[contribution guide (`CONTRIBUTING.md`)](CONTRIBUTING.md)**. All content is a **behavioral
+hypothesis**, grounded in humanist leadership — not a rigid rule. Contribute in that spirit.
 
 ---
 
-Todo o conteúdo é uma **hipótese de comportamento**, ancorada na liderança humanista — não uma
-regra rígida. Contribua nesse espírito.
+## Inspirations
 
----
+Created by **Mario Campello** as an open tool on **leadership + AI**. This project's vision forms at
+the intersection of several sources — none of them is "the methodology"; together they inform a
+practice of humanist leadership:
 
-## Inspirações
+- **Barry-Wehmiller / Bob Chapman** — _Everybody Matters_ (2015, rev. 2025, with Raj Sisodia);
+  Barry-Wehmiller University (_Listen Like a Leader_); Harvard Business School case (2016).
+- **Simon Sinek** — _Leaders Eat Last_, _Start With Why_ and talks on trust, safety and purpose.
+- **Mario Campello's own leadership experience and practice** — what works in the day-to-day
+  reality of leading people and relationships.
 
-Criado por **Mario Campello** como uma ferramenta aberta sobre **liderança + IA**. A visão deste
-projeto se forma no cruzamento de várias fontes — nenhuma delas é "a metodologia"; juntas elas
-informam uma prática própria de liderança humanista:
+Quotes and concrete data throughout the base credit their sources; the principles are expressed in
+the project's own voice. This project is independent and is not affiliated with or endorsed by
+Barry-Wehmiller, Bob Chapman or Simon Sinek — references are made for educational and intellectual
+acknowledgment.
 
-- **Barry-Wehmiller / Bob Chapman** — _Everybody Matters_ (2015, rev. 2025, com Raj Sisodia);
-  Barry-Wehmiller University (_Listen Like a Leader_); caso da Harvard Business School (2016).
-- **Simon Sinek** — _Leaders Eat Last_, _Start With Why_ e palestras sobre confiança, segurança
-  e propósito.
-- **A experiência e a prática de liderança de Mario Campello** — o que funciona no dia a dia real
-  de conduzir pessoas e relações.
+## Connect
 
-As citações e dados concretos ao longo da base creditam suas fontes; os princípios são expressos
-em voz própria. Este projeto é independente e não é afiliado nem endossado pela Barry-Wehmiller,
-por Bob Chapman ou por Simon Sinek — as referências são feitas para fins educacionais e de
-reconhecimento intelectual.
-
-# Conecte-se
-Para reuniões, mentoria, treinamento e desenvolvimento entre em contato:
+For talks, mentoring, training and development, get in touch:
 
 - [https://campello.me](https://campello.me)
 - [https://linkedin.com/in/mcampello](https://linkedin.com/in/mcampello)
 
-## Licença
+## License
 
-[MIT](LICENSE) — use, adapte e distribua livremente.
+[MIT](LICENSE) — use, adapt and distribute freely.

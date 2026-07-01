@@ -1,0 +1,240 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Leadership MCP — liderança humanista no momento em que você lidera</title>
+<meta name="description" content="O treinamento de liderança evapora em semanas. O Leadership MCP entrega o princípio certo no instante em que você escreve o e-mail difícil, dá o feedback, comunica a decisão." />
+<meta property="og:title" content="Leadership MCP — liderança no momento da verdade" />
+<meta property="og:description" content="Liderança humanista entregue ao seu assistente de IA, na hora exata em que você lidera." />
+<meta property="og:type" content="website" />
+<style>
+  :root{
+    --ink:#1c2530; --muted:#5b6875; --line:#e6e3dc;
+    --bg:#faf8f4; --card:#ffffff; --accent:#2f6f5b; --accent-soft:#e7f0ec;
+    --warm:#c65f3f; --warm-soft:#f7e9e3;
+    --radius:16px; --maxw:1080px;
+  }
+  *{box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{
+    margin:0; background:var(--bg); color:var(--ink);
+    font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+    line-height:1.6; -webkit-font-smoothing:antialiased;
+  }
+  .wrap{max-width:var(--maxw); margin:0 auto; padding:0 24px}
+  a{color:var(--accent); text-decoration:none}
+  a:hover{text-decoration:underline}
+  h1,h2,h3{line-height:1.2; letter-spacing:-0.01em; margin:0 0 .4em}
+  h1{font-size:clamp(2rem,5vw,3.3rem); font-weight:800}
+  h2{font-size:clamp(1.5rem,3.5vw,2.2rem); font-weight:700; margin-top:0}
+  .lead{font-size:clamp(1.1rem,2.2vw,1.35rem); color:var(--muted); max-width:60ch}
+  .eyebrow{text-transform:uppercase; letter-spacing:.12em; font-size:.8rem; font-weight:700; color:var(--accent)}
+  .btn{
+    display:inline-block; padding:.85em 1.4em; border-radius:999px; font-weight:700;
+    background:var(--accent); color:#fff; border:2px solid var(--accent); transition:.15s;
+  }
+  .btn:hover{background:#255a49; border-color:#255a49; text-decoration:none}
+  .btn.ghost{background:transparent; color:var(--accent)}
+  .btn.ghost:hover{background:var(--accent-soft)}
+  .btns{display:flex; gap:14px; flex-wrap:wrap; margin-top:28px}
+  section{padding:72px 0; border-top:1px solid var(--line)}
+  header.hero{padding:88px 0 72px; border-top:none}
+  .badges{display:flex; gap:8px; flex-wrap:wrap; margin-top:28px; opacity:.9}
+  .badges img{height:20px}
+  /* before/after */
+  .ba{display:grid; grid-template-columns:1fr 1fr; gap:20px; margin-top:32px}
+  .ba .col{background:var(--card); border:1px solid var(--line); border-radius:var(--radius); padding:24px}
+  .ba .col.raw{border-color:var(--warm-soft); background:var(--warm-soft)}
+  .ba .col.shaped{border-color:var(--accent-soft); background:var(--accent-soft)}
+  .ba .tag{font-size:.78rem; font-weight:800; text-transform:uppercase; letter-spacing:.08em; margin-bottom:12px}
+  .ba .raw .tag{color:var(--warm)}
+  .ba .shaped .tag{color:var(--accent)}
+  .ba p.msg{font-size:1.05rem; margin:.2em 0 1em; color:var(--ink)}
+  .ba ul{margin:0; padding-left:1.1em; color:var(--muted); font-size:.95rem}
+  .grid3{display:grid; grid-template-columns:repeat(3,1fr); gap:20px; margin-top:36px}
+  .card{background:var(--card); border:1px solid var(--line); border-radius:var(--radius); padding:26px}
+  .card h3{font-size:1.1rem}
+  .card p{color:var(--muted); margin:0; font-size:.97rem}
+  .steps{display:grid; grid-template-columns:repeat(3,1fr); gap:20px; margin-top:36px; counter-reset:s}
+  .step{position:relative; padding:26px; background:var(--card); border:1px solid var(--line); border-radius:var(--radius)}
+  .step:before{counter-increment:s; content:counter(s); display:inline-flex; align-items:center; justify-content:center;
+    width:34px; height:34px; border-radius:50%; background:var(--accent); color:#fff; font-weight:800; margin-bottom:12px}
+  .quote{max-width:64ch; font-size:1.3rem; font-weight:600; color:var(--ink)}
+  .quote cite{display:block; margin-top:14px; font-size:.95rem; font-weight:500; color:var(--muted); font-style:normal}
+  .partner{background:var(--ink); color:#fff; border-radius:24px; padding:48px; margin-top:12px}
+  .partner h2{color:#fff}
+  .partner p{color:#cdd6dd; max-width:62ch}
+  .partner .btn{background:#fff; color:var(--ink); border-color:#fff}
+  .partner .btn:hover{background:#e9edf0; border-color:#e9edf0}
+  footer{padding:48px 0 64px; color:var(--muted); font-size:.9rem}
+  footer a{color:var(--muted); text-decoration:underline}
+  .kicker{color:var(--warm); font-weight:700}
+  @media(max-width:720px){
+    .ba,.grid3,.steps{grid-template-columns:1fr}
+    section{padding:56px 0}
+  }
+</style>
+</head>
+<body>
+
+<header class="hero">
+  <div class="wrap">
+    <p class="eyebrow">Liderança humanista · open source</p>
+    <h1>O melhor princípio de liderança chega tarde demais.</h1>
+    <p class="lead">
+      Liderança não acontece no treinamento — acontece no e-mail que você está prestes a
+      enviar, no feedback de daqui a cinco minutos, no comunicado da decisão difícil.
+      O <strong>Leadership MCP</strong> entrega o princípio certo <em>no instante em que você lidera</em>,
+      dentro do assistente de IA que você já usa.
+    </p>
+    <div class="btns">
+      <a class="btn" href="#demo">Ver a diferença na prática</a>
+      <a class="btn ghost" href="#parceiros">Sou de treinamento / consultoria</a>
+    </div>
+    <div class="badges">
+      <img src="https://img.shields.io/badge/License-MIT-green.svg" alt="MIT" />
+      <img src="https://img.shields.io/npm/v/leadership-mcp.svg" alt="npm" />
+      <img src="https://img.shields.io/badge/MCP-compatible-blue" alt="MCP compatível" />
+    </div>
+  </div>
+</header>
+
+<section id="problema">
+  <div class="wrap">
+    <p class="eyebrow">O problema</p>
+    <h2>Treinamento de liderança evapora em duas semanas.</h2>
+    <p class="lead">
+      A empresa investe em programas, workshops, off-sites. A boa intenção existe. Mas na hora da
+      pressão — com pressa, sob tensão — a gente cai no instinto ou no "corporativês", e a forma
+      escala o conflito em vez de resolvê-lo. O conhecimento estava lá; <span class="kicker">faltou
+      chegar no momento certo</span>.
+    </p>
+  </div>
+</section>
+
+<section id="demo">
+  <div class="wrap">
+    <p class="eyebrow">Veja a diferença</p>
+    <h2>O mesmo e-mail, dois resultados.</h2>
+    <p class="lead">Um colega te acusa de atrasar o projeto dele. Você precisa responder.</p>
+
+    <div class="ba">
+      <div class="col raw">
+        <div class="tag">✕ Resposta no instinto</div>
+        <p class="msg">"Você não entregou de novo e agora a culpa é minha? Não foi isso que combinamos."</p>
+        <ul>
+          <li>Ataca o caráter, não o fato</li>
+          <li>Termina no problema</li>
+          <li>Fecha a porta para explicação</li>
+          <li>Escala o conflito</li>
+        </ul>
+      </div>
+      <div class="col shaped">
+        <div class="tag">✓ Resposta moldada pelo Leadership MCP</div>
+        <p class="msg">"A entrega combinada para sexta não chegou aqui — imagino que tenha surgido algo.
+          Consegue me dar uma posição até amanhã às 12h para eu ajustar o cronograma?"</p>
+        <ul>
+          <li>Começa pelo fato, assume boa intenção</li>
+          <li>Descreve comportamento, não caráter</li>
+          <li>Termina num próximo passo concreto</li>
+          <li>Abre a porta — reduz a escalada</li>
+        </ul>
+      </div>
+    </div>
+    <p class="lead" style="margin-top:28px">
+      A orientação é sempre uma <strong>hipótese</strong>, nunca uma prescrição. Você decide se quer ouvir.
+    </p>
+  </div>
+</section>
+
+<section id="casos">
+  <div class="wrap">
+    <p class="eyebrow">Onde ajuda</p>
+    <h2>Nos momentos que definem a confiança de um time.</h2>
+    <div class="grid3">
+      <div class="card"><h3>Conduzir um conflito</h3><p>Escutar antes de reagir, separar a pessoa do problema, não escalar a tensão.</p></div>
+      <div class="card"><h3>Dar um feedback</h3><p>Comportamento → impacto → sentimento. Específico e sincero, sem virar ataque.</p></div>
+      <div class="card"><h3>Comunicar uma decisão difícil</h3><p>Assumir a responsabilidade, explicar o porquê, reconhecer o impacto humano.</p></div>
+      <div class="card"><h3>Escrever o e-mail crítico</h3><p>Começar pelo fato, oferecer um caminho, terminar num próximo passo.</p></div>
+      <div class="card"><h3>Comunicar uma mudança</h3><p>Responder "e eu nisso?", nomear a perda, dar próximos passos concretos.</p></div>
+      <div class="card"><h3>A conversa que você adia</h3><p>Reconhecer o adiamento e ir direto, com uma estrutura simples e humana.</p></div>
+    </div>
+  </div>
+</section>
+
+<section id="como">
+  <div class="wrap">
+    <p class="eyebrow">Como funciona</p>
+    <h2>Discreto por design. Você no controle.</h2>
+    <div class="steps">
+      <div class="step"><h3>Você pede ajuda</h3><p>"Como respondo esse e-mail agressivo do colega?" — no seu assistente de IA de sempre.</p></div>
+      <div class="step"><h3>Ele pergunta antes</h3><p>Percebe que é uma situação relacional e oferece consultar a base de liderança humanista. Se você não quiser, ele responde direto.</p></div>
+      <div class="step"><h3>A resposta já vem moldada</h3><p>Fato em vez de acusação, próximo passo em vez de porta fechada — com impacto humano e econômico comprovado.</p></div>
+    </div>
+    <p class="lead" style="margin-top:28px">
+      Nada das suas conversas sai da sua máquina — a ferramenta só lê a base pública de conhecimento.
+      Roda sobre o padrão aberto <a href="https://modelcontextprotocol.io">MCP</a>.
+    </p>
+  </div>
+</section>
+
+<section id="prova">
+  <div class="wrap">
+    <p class="eyebrow">Por que funciona</p>
+    <blockquote class="quote">
+      "Medimos o sucesso pela forma como tocamos a vida das pessoas."
+      <cite>— Bob Chapman, Barry-Wehmiller. A empresa cresceu de US$ 20M para US$ 3,6B em 50 anos
+      com liderança humanista (caso da Harvard Business School, 2016).</cite>
+    </blockquote>
+    <p class="lead" style="margin-top:24px">
+      A base cruza princípios de Barry-Wehmiller / Bob Chapman e Simon Sinek — confiança,
+      segurança psicológica, cultura de serviço — traduzidos em comportamentos concretos.
+    </p>
+  </div>
+</section>
+
+<section id="parceiros">
+  <div class="wrap">
+    <div class="partner">
+      <p class="eyebrow" style="color:#8fd3bf">Para empresas de treinamento e consultorias</p>
+      <h2>Seu treinamento não precisa mais evaporar.</h2>
+      <p>
+        O Leadership MCP pode virar o <strong>produto de reforço contínuo</strong> que você oferece
+        aos seus clientes: sua metodologia e sua marca, entregues no momento em que o líder aplica —
+        todo dia, em cada interação. Base personalizável (white-label), rollout sem fricção.
+      </p>
+      <div class="btns">
+        <a class="btn" href="mailto:mario@campello.me?subject=Leadership%20MCP%20—%20parceria">Conversar sobre parceria</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="comecar">
+  <div class="wrap">
+    <p class="eyebrow">Começar</p>
+    <h2>Open source e gratuito.</h2>
+    <p class="lead">
+      Instalável no Claude e em qualquer cliente compatível com MCP. Contribua com a base viva de
+      conhecimento — sem precisar escrever código.
+    </p>
+    <div class="btns">
+      <a class="btn" href="https://github.com/mcampello/leadership-mcp">Ver no GitHub</a>
+      <a class="btn ghost" href="https://www.npmjs.com/package/leadership-mcp">Pacote no npm</a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <p>
+      <strong>Leadership MCP</strong> — liderança humanista no momento da verdade.
+      Projeto open source (MIT), mantido por <a href="https://campello.me">Mario Campello</a>.
+      Não afiliado a Barry-Wehmiller, Bob Chapman ou Simon Sinek.
+    </p>
+  </div>
+</footer>
+
+</body>
+</html>

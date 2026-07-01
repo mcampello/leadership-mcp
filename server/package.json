@@ -3,6 +3,15 @@
   "version": "0.1.2",
   "description": "MCP server que distribui uma base de conhecimento viva sobre liderança humanista para o Claude. Inspirado em Barry-Wehmiller/Bob Chapman, Simon Sinek e na prática de Mario Campello.",
   "type": "module",
+  "homepage": "https://github.com/mcampello/leadership-mcp#readme",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mcampello/leadership-mcp.git",
+    "directory": "server"
+  },
+  "bugs": {
+    "url": "https://github.com/mcampello/leadership-mcp/issues"
+  },
   "bin": {
     "leadership-mcp": "index.js"
   },
@@ -20,11 +29,21 @@
   "keywords": [
     "mcp",
     "model-context-protocol",
+    "mcp-server",
+    "claude",
+    "claude-desktop",
+    "ai",
     "leadership",
+    "humanist-leadership",
+    "leadership-development",
+    "management",
+    "coaching",
+    "feedback",
     "liderança",
     "liderança-humanista",
-    "humanist-leadership",
-    "claude"
+    "gestão",
+    "gestao-de-pessoas",
+    "feedback"
   ],
   "author": "Mario Campello",
   "license": "MIT",
