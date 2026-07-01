@@ -21,16 +21,16 @@ tarefas vivem no board do projeto (Linear).
 - [x] `CODE_OF_CONDUCT.md` (Contributor Covenant 2.1)
 - [x] CI de smoke test (`.github/workflows/ci.yml`, Node 18/20/22)
 - [x] `GROWTH.md` (este quadro)
+- [ ] Landing dedicada da marca — casos de uso + demo "antes/depois" (ponta de lança)
 - [ ] README bilíngue (EN + PT) orientado a conversão
 - [ ] Base de materiais de marketing (`/marketing`)
 - [ ] Materiais de parceria (`/marketing/parcerias`)
-- [ ] Web app "experimente agora" (porta de entrada sem instalação) — *depende de Setup*
-- [ ] Landing dedicada da marca — *depende de Setup*
 - [ ] Textos de submissão a registries MCP + empacotamento 1‑clique
+- [ ] ~~Web app "experimente agora"~~ — *adiado* (landing + demo + conector cobrem o valor)
 
 ### 🔑 Setup (mantenedor)
-- [ ] Chave de API do Claude + hospedagem (desbloqueia o web app)
 - [ ] Contas de marca do produto + agendador social (token de API)
+- [ ] Hospedagem da landing (ou GitHub Pages)
 - [ ] `NPM_TOKEN` (secret) + GitHub Pages + logins de registries
 - [ ] Local privado para guardar a estratégia
 - [ ] Lista de contatos para o canal de parcerias
